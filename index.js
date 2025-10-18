@@ -28,9 +28,15 @@ await testConnection();
 
 // IMPORTANT: Apply middleware BEFORE routes
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'], // Allow Vite dev server
+  origin: [
+    'http://localhost:5173', 
+    'http://127.0.0.1:5173',
+    'https://shatayuhospital.com',
+    'http://shatayuhospital.com'
+  ], // Allow Vite dev server and production domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 app.use(express.json());
 
