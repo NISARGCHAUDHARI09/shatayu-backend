@@ -20,7 +20,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5002;
-const JWT_SECRET = 'hardcoded_secret_for_demo';
+const JWT_SECRET = process.env.JWT_SECRET || 'hardcoded_secret_for_demo';
 
 // Initialize Cloudflare D1 database on startup
 await initDatabase();
@@ -32,9 +32,11 @@ app.use(cors({
     'http://localhost:5173', 
     'http://127.0.0.1:5173',
     'https://shatayuhospital.com',
-    'http://shatayuhospital.com'
+    'http://shatayuhospital.com',
+    'https://www.shatayuhospital.com',
+    'http://www.shatayuhospital.com'
   ], // Allow Vite dev server and production domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
