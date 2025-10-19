@@ -31,6 +31,10 @@ app.use(cors({
   origin: [
     'http://localhost:5173', 
     'http://127.0.0.1:5173',
+    'https://shatayuhospital.org',
+    'http://shatayuhospital.org',
+    'https://www.shatayuhospital.org',
+    'http://www.shatayuhospital.org',
     'https://shatayuhospital.com',
     'http://shatayuhospital.com',
     'https://www.shatayuhospital.com',
