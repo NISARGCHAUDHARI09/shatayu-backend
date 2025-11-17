@@ -67,7 +67,33 @@ exports.importPatients = async (req, res) => {
       return res.status(400).json({ error: 'Invalid patients data' });
     }
     
-    const createdPatients = await db.Patient.bulkCreate(patients, {
+    // Convert camelCase to snake_case for database
+    const convertedPatients = patients.map(patient => ({
+      patient_id: patient.patientId || `P${Date.now()}${Math.floor(Math.random() * 1000)}`,
+      name: patient.name,
+      age: patient.age ? parseInt(patient.age) : null,
+      gender: patient.gender,
+      phone: patient.phone,
+      email: patient.email || null,
+      address: patient.address || null,
+      city: patient.city || null,
+      state: patient.state || null,
+      postal_code: patient.postalCode || null,
+      country: patient.country || 'India',
+      date_of_birth: patient.dateOfBirth || null,
+      blood_group: patient.bloodGroup || null,
+      constitution: patient.constitution || null,
+      primary_treatment: patient.primaryTreatment || null,
+      patient_type: patient.patientType || 'OPD',
+      status: patient.status || 'active',
+      last_visit: patient.lastVisit || new Date().toISOString().split('T')[0],
+      emergency_contact: patient.emergencyContact || null,
+      medical_history: patient.medicalHistory || null,
+      allergies: patient.allergies || null,
+      current_medication: patient.currentMedication || null
+    }));
+    
+    const createdPatients = await db.Patient.bulkCreate(convertedPatients, {
       ignoreDuplicates: true,
       validate: true
     });
@@ -75,10 +101,11 @@ exports.importPatients = async (req, res) => {
     res.status(201).json({
       success: true,
       message: `${createdPatients.length} patients imported successfully`,
-      patients: createdPatients
+      count: createdPatients.length
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error('Import error:', err);
+    res.status(500).json({ error: err.message || 'Failed to import patients' });
   }
 };
 

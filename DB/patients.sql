@@ -9,8 +9,11 @@ CREATE TABLE IF NOT EXISTS patients (
   email TEXT,
   address TEXT,
   city TEXT,
+  state TEXT,
   postal_code TEXT,
   country TEXT DEFAULT 'India',
+  date_of_birth DATE,
+  blood_group TEXT,
   constitution TEXT,                            -- e.g., Vata, Pitta, Tridosha
   primary_treatment TEXT,                       -- e.g., Panchakarma
   patient_type TEXT CHECK(patient_type IN ('OPD', 'IPD')),
@@ -18,6 +21,9 @@ CREATE TABLE IF NOT EXISTS patients (
   last_visit DATE,
   next_appointment DATE,
   emergency_contact TEXT,
+  medical_history TEXT,
+  allergies TEXT,
+  current_medication TEXT,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
