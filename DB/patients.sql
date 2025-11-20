@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS patients (
   name TEXT NOT NULL,
   age INTEGER CHECK(age > 0),
   gender TEXT CHECK(gender IN ('Male', 'Female', 'Other')),
-  phone TEXT NOT NULL,
+  phone TEXT,                                    -- Made optional (was NOT NULL)
   email TEXT,
   address TEXT,
   city TEXT,
