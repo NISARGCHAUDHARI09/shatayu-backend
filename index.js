@@ -15,6 +15,7 @@ import medicineDraftRoutes from './routes/medicinedraftroutes.js';
 import authRoutes from './routes/authroutes.js';
 import userRoutes from './routes/userroutes.js';
 import billingRoutes from './routes/billingroutes.js';
+import patientRoutes from './routes/patientroutes.js';
 
 dotenv.config();
 
@@ -83,6 +84,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
 // Patient management routes
+app.use('/api/patients', patientRoutes);
 app.use('/api/opd', opdRoutes);
 app.use('/api/ipd', ipdRoutes);
 
