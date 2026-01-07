@@ -191,7 +191,7 @@ export const deletePatient = async (req, res) => {
   try {
     const { id } = req.params;
     
-    await queryD1('DELETE FROM patients WHERE id = ?', [id]);
+    await queryD1('DELETE FROM patients WHERE patient_id = ?', [id]);
     
     res.json({ success: true, message: 'Patient deleted successfully' });
   } catch (err) {
