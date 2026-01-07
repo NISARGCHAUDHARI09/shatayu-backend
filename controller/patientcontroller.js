@@ -193,50 +193,49 @@ export const deletePatient = async (req, res) => {
     
     console.log('🗑️ DELETE request for patient_id:', patientIdParam);
     
-    // Try to delete from all related tables first (ignore all errors)
-    // We'll try with both the TEXT patient_id and just the patient_id value
-    const relatedTables = ['diagnosis', 'prescriptions', 'opd_records', 'ipd_records', 
-                           'panchkarma', 'billing', 'medicine_bills', 'draft_bills'];
+    // Use batch SQL execution to disable foreign keys for the entire transaction
+    const D1_URL = process.env.D1_DATABASE_URL;
+    const CF_API_TOKEN = process.env.CF_API_TOKEN || process.env.D1_AUTH_TOKEN;
+    const match = D1_URL.match(/accounts\/([a-f0-9]+)\/d1\/database\/([a-f0-9-]+)/);
+    const ACCOUNT_ID = match[1];
+    const DATABASE_ID = match[2];
+    const apiUrl = `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/d1/database/${DATABASE_ID}/query`;
     
-    for (const table of relatedTables) {
-      try {
-        // Try deleting with patient_id as TEXT
-        await queryD1(`DELETE FROM ${table} WHERE patient_id = ?`, [patientIdParam]);
-        console.log(`✅ Deleted from ${table}`);
-      } catch (err) {
-        console.log(`⚠️ ${table}:`, err.message);
-      }
+    // Execute as a batch with foreign keys disabled
+    const batchSQL = [
+      { sql: 'PRAGMA foreign_keys = OFF', params: [] },
+      { sql: 'DELETE FROM patients WHERE patient_id = ?', params: [patientIdParam] },
+      { sql: 'PRAGMA foreign_keys = ON', params: [] }
+    ];
+    
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${CF_API_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(batchSQL),
+    });
+    
+    const data = await response.json();
+    console.log('🔍 Batch delete response:', JSON.stringify(data));
+    
+    if (!response.ok || !data.success) {
+      const msg = data.errors?.[0]?.message || 'Delete failed';
+      console.error('❌ Delete failed:', msg);
+      return res.status(500).json({ success: false, error: msg });
     }
     
-    // Now try to delete the patient
-    try {
-      const result = await queryD1('DELETE FROM patients WHERE patient_id = ?', [patientIdParam]);
-      console.log('✅ Patient deleted');
-      
-      // Verify
-      const check = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [patientIdParam]);
-      
-      if (check.results?.length > 0) {
-        console.error('❌ Patient still exists!');
-        return res.status(500).json({ success: false, error: 'Failed to delete patient' });
-      }
-      
-      console.log('✅ Delete verified');
-      res.json({ success: true, message: 'Patient deleted successfully' });
-      
-    } catch (err) {
-      console.error('❌ Delete failed:', err.message);
-      
-      // If foreign key error, return specific message
-      if (err.message.includes('foreign key')) {
-        return res.status(500).json({ 
-          success: false, 
-          error: 'Cannot delete patient with existing related records. Please contact administrator.' 
-        });
-      }
-      
-      return res.status(500).json({ success: false, error: err.message });
+    // Verify deletion
+    const check = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [patientIdParam]);
+    
+    if (check.results?.length > 0) {
+      console.error('❌ Patient still exists!');
+      return res.status(500).json({ success: false, error: 'Failed to delete patient' });
     }
+    
+    console.log('✅ Patient deleted and verified');
+    res.json({ success: true, message: 'Patient deleted successfully' });
     
   } catch (err) {
     console.error('❌ Delete error:', err);
