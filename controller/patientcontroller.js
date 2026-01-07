@@ -191,30 +191,55 @@ export const deletePatient = async (req, res) => {
   try {
     const { id: patientIdParam } = req.params;
     
-    console.log('🗑️ DELETE request received for patient_id:', patientIdParam);
+    console.log('🗑️ DELETE request for patient_id:', patientIdParam);
     
-    // Simply delete from patients table - ignore foreign key errors
+    // Try to delete from all related tables first (ignore all errors)
+    // We'll try with both the TEXT patient_id and just the patient_id value
+    const relatedTables = ['diagnosis', 'prescriptions', 'opd_records', 'ipd_records', 
+                           'panchkarma', 'billing', 'medicine_bills', 'draft_bills'];
+    
+    for (const table of relatedTables) {
+      try {
+        // Try deleting with patient_id as TEXT
+        await queryD1(`DELETE FROM ${table} WHERE patient_id = ?`, [patientIdParam]);
+        console.log(`✅ Deleted from ${table}`);
+      } catch (err) {
+        console.log(`⚠️ ${table}:`, err.message);
+      }
+    }
+    
+    // Now try to delete the patient
     try {
       const result = await queryD1('DELETE FROM patients WHERE patient_id = ?', [patientIdParam]);
-      console.log('✅ Patient deleted:', result);
+      console.log('✅ Patient deleted');
+      
+      // Verify
+      const check = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [patientIdParam]);
+      
+      if (check.results?.length > 0) {
+        console.error('❌ Patient still exists!');
+        return res.status(500).json({ success: false, error: 'Failed to delete patient' });
+      }
+      
+      console.log('✅ Delete verified');
+      res.json({ success: true, message: 'Patient deleted successfully' });
+      
     } catch (err) {
-      console.error('❌ Error deleting patient:', err.message);
+      console.error('❌ Delete failed:', err.message);
+      
+      // If foreign key error, return specific message
+      if (err.message.includes('foreign key')) {
+        return res.status(500).json({ 
+          success: false, 
+          error: 'Cannot delete patient with existing related records. Please contact administrator.' 
+        });
+      }
+      
       return res.status(500).json({ success: false, error: err.message });
     }
     
-    // Verify deletion
-    const verifyResult = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [patientIdParam]);
-    
-    if (verifyResult.results?.length > 0) {
-      console.error('❌ Patient still exists after deletion');
-      return res.status(500).json({ success: false, error: 'Failed to delete patient' });
-    }
-    
-    console.log('✅ Patient deletion verified');
-    res.json({ success: true, message: 'Patient deleted successfully' });
-    
   } catch (err) {
-    console.error('❌ Delete patient error:', err);
+    console.error('❌ Delete error:', err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
