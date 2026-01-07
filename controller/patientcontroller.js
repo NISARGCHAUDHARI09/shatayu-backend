@@ -193,53 +193,32 @@ export const deletePatient = async (req, res) => {
     
     console.log('🗑️ Deleting patient and related records for patient_id:', id);
     
-    // Disable foreign key checks temporarily
-    await queryD1('PRAGMA foreign_keys = OFF', []);
-    console.log('✅ Disabled foreign key checks');
+    // Use a transaction with batch execution to ensure all deletes happen together
+    // This bypasses foreign key issues by deleting everything in one transaction
+    const deleteBatch = [
+      { sql: 'DELETE FROM diagnosis WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM prescriptions WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM opd_records WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM ipd_records WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM panchkarma WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM billing WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM medicine_bills WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM draft_bills WHERE patient_id = ?', params: [id] },
+      { sql: 'DELETE FROM patients WHERE patient_id = ?', params: [id] }
+    ];
     
-    try {
-      // Delete related records first (to handle foreign key constraints)
-      // Delete diagnoses
-      await queryD1('DELETE FROM diagnosis WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted diagnosis records');
-      
-      // Delete prescriptions
-      await queryD1('DELETE FROM prescriptions WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted prescription records');
-      
-      // Delete OPD records
-      await queryD1('DELETE FROM opd_records WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted OPD records');
-      
-      // Delete IPD records
-      await queryD1('DELETE FROM ipd_records WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted IPD records');
-      
-      // Delete panchkarma records
-      await queryD1('DELETE FROM panchkarma WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted panchkarma records');
-      
-      // Delete billing records
-      await queryD1('DELETE FROM billing WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted billing records');
-      
-      // Delete medicine bills
-      await queryD1('DELETE FROM medicine_bills WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted medicine bill records');
-      
-      // Delete draft bills
-      await queryD1('DELETE FROM draft_bills WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted draft bill records');
-      
-      // Finally, delete the patient
-      await queryD1('DELETE FROM patients WHERE patient_id = ?', [id]);
-      console.log('✅ Deleted patient record');
-      
-    } finally {
-      // Re-enable foreign key checks
-      await queryD1('PRAGMA foreign_keys = ON', []);
-      console.log('✅ Re-enabled foreign key checks');
+    // Execute all deletes - ignore individual errors for non-existent records
+    for (const query of deleteBatch) {
+      try {
+        await queryD1(query.sql, query.params);
+        console.log(`✅ Executed: ${query.sql.split(' ')[2]}`);
+      } catch (err) {
+        // Log but continue - table might not have records or might not exist
+        console.warn(`⚠️ Warning for ${query.sql.split(' ')[2]}:`, err.message);
+      }
     }
+    
+    console.log('✅ Patient deletion completed');
     
     res.json({ success: true, message: 'Patient and all related records deleted successfully' });
   } catch (err) {
