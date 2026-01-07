@@ -193,58 +193,26 @@ export const deletePatient = async (req, res) => {
     
     console.log('🗑️ DELETE request received for patient_id:', patientIdParam);
     
-    // First, get the integer id from patient_id (since foreign keys use id, not patient_id)
-    const checkResult = await queryD1('SELECT id, patient_id, name FROM patients WHERE patient_id = ?', [patientIdParam]);
-    console.log('🔍 Patient lookup result:', checkResult);
-    
-    if (!checkResult.results || checkResult.results.length === 0) {
-      console.log('❌ Patient not found in database with patient_id:', patientIdParam);
-      return res.status(404).json({ success: false, error: 'Patient not found' });
+    // Simply delete from patients table - ignore foreign key errors
+    try {
+      const result = await queryD1('DELETE FROM patients WHERE patient_id = ?', [patientIdParam]);
+      console.log('✅ Patient deleted:', result);
+    } catch (err) {
+      console.error('❌ Error deleting patient:', err.message);
+      return res.status(500).json({ success: false, error: err.message });
     }
     
-    const patient = checkResult.results[0];
-    const patientIntegerId = patient.id; // This is the INTEGER id that foreign keys reference
-    
-    console.log('✅ Found patient to delete:', patient);
-    console.log('🔑 Using integer id for deletion:', patientIntegerId);
-    
-    // Delete using integer id (which foreign keys reference)
-    const deleteBatch = [
-      { sql: 'DELETE FROM diagnosis WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM prescriptions WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM opd_records WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM ipd_records WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM panchkarma WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM billing WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM medicine_bills WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM draft_bills WHERE patient_id = ?', params: [patientIntegerId] },
-      { sql: 'DELETE FROM patients WHERE id = ?', params: [patientIntegerId] } // Use integer id here
-    ];
-    
-    // Execute all deletes
-    for (const query of deleteBatch) {
-      try {
-        const result = await queryD1(query.sql, query.params);
-        const tableName = query.sql.split(' ')[2];
-        console.log(`✅ Executed DELETE on ${tableName}`);
-      } catch (err) {
-        console.warn(`⚠️ Warning for ${query.sql.split(' ')[2]}:`, err.message);
-        // Don't throw - continue with other deletes
-      }
-    }
-    
-    // Verify deletion using integer id
-    const verifyResult = await queryD1('SELECT id FROM patients WHERE id = ?', [patientIntegerId]);
-    console.log('🔍 Verification check - patient still exists?:', verifyResult.results?.length > 0 ? 'YES ❌' : 'NO ✅');
+    // Verify deletion
+    const verifyResult = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [patientIdParam]);
     
     if (verifyResult.results?.length > 0) {
-      console.error('❌ DELETION FAILED - Patient still exists in database!');
-      return res.status(500).json({ success: false, error: 'Failed to delete patient from database' });
+      console.error('❌ Patient still exists after deletion');
+      return res.status(500).json({ success: false, error: 'Failed to delete patient' });
     }
     
-    console.log('✅ Patient deletion completed and verified');
+    console.log('✅ Patient deletion verified');
+    res.json({ success: true, message: 'Patient deleted successfully' });
     
-    res.json({ success: true, message: 'Patient and all related records deleted successfully' });
   } catch (err) {
     console.error('❌ Delete patient error:', err);
     res.status(500).json({ success: false, error: err.message });
