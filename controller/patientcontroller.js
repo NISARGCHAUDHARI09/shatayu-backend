@@ -189,54 +189,52 @@ export const updatePatient = async (req, res) => {
 // Delete patient
 export const deletePatient = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { id: patientIdParam } = req.params;
     
-    console.log('🗑️ DELETE request received for patient_id:', id);
-    console.log('🗑️ Type of ID:', typeof id);
+    console.log('🗑️ DELETE request received for patient_id:', patientIdParam);
     
-    // First, check if patient exists
-    const checkResult = await queryD1('SELECT patient_id, name FROM patients WHERE patient_id = ?', [id]);
+    // First, get the integer id from patient_id (since foreign keys use id, not patient_id)
+    const checkResult = await queryD1('SELECT id, patient_id, name FROM patients WHERE patient_id = ?', [patientIdParam]);
     console.log('🔍 Patient lookup result:', checkResult);
     
     if (!checkResult.results || checkResult.results.length === 0) {
-      console.log('❌ Patient not found in database with ID:', id);
+      console.log('❌ Patient not found in database with patient_id:', patientIdParam);
       return res.status(404).json({ success: false, error: 'Patient not found' });
     }
     
-    console.log('✅ Found patient to delete:', checkResult.results[0]);
+    const patient = checkResult.results[0];
+    const patientIntegerId = patient.id; // This is the INTEGER id that foreign keys reference
     
-    // Use a transaction with batch execution to ensure all deletes happen together
+    console.log('✅ Found patient to delete:', patient);
+    console.log('🔑 Using integer id for deletion:', patientIntegerId);
+    
+    // Delete using integer id (which foreign keys reference)
     const deleteBatch = [
-      { sql: 'DELETE FROM diagnosis WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM prescriptions WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM opd_records WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM ipd_records WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM panchkarma WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM billing WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM medicine_bills WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM draft_bills WHERE patient_id = ?', params: [id] },
-      { sql: 'DELETE FROM patients WHERE patient_id = ?', params: [id] }
+      { sql: 'DELETE FROM diagnosis WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM prescriptions WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM opd_records WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM ipd_records WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM panchkarma WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM billing WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM medicine_bills WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM draft_bills WHERE patient_id = ?', params: [patientIntegerId] },
+      { sql: 'DELETE FROM patients WHERE id = ?', params: [patientIntegerId] } // Use integer id here
     ];
     
-    // Execute all deletes - ignore individual errors for non-existent records
-    let patientDeleted = false;
+    // Execute all deletes
     for (const query of deleteBatch) {
       try {
         const result = await queryD1(query.sql, query.params);
         const tableName = query.sql.split(' ')[2];
-        console.log(`✅ Executed DELETE on ${tableName}:`, result);
-        
-        if (tableName === 'patients') {
-          patientDeleted = true;
-        }
+        console.log(`✅ Executed DELETE on ${tableName}`);
       } catch (err) {
-        // Log but continue - table might not have records or might not exist
         console.warn(`⚠️ Warning for ${query.sql.split(' ')[2]}:`, err.message);
+        // Don't throw - continue with other deletes
       }
     }
     
-    // Verify deletion
-    const verifyResult = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [id]);
+    // Verify deletion using integer id
+    const verifyResult = await queryD1('SELECT id FROM patients WHERE id = ?', [patientIntegerId]);
     console.log('🔍 Verification check - patient still exists?:', verifyResult.results?.length > 0 ? 'YES ❌' : 'NO ✅');
     
     if (verifyResult.results?.length > 0) {
