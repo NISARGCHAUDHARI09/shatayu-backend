@@ -12,15 +12,16 @@ export const getAllPatients = async (req, res) => {
 
     console.log(`📋 Fetching patients - Page: ${page}, Limit: ${limit}, Search: "${search}"`);
 
-    // Build WHERE clause for search
-    let whereClause = "";
+    // Always exclude soft-deleted patients
+    let whereClause = "WHERE (status IS NULL OR status != 'deleted')";
     let params = [];
     
     if (search && search.trim() !== "") {
-      whereClause = `WHERE 
+      whereClause += ` AND (
         LOWER(name) LIKE LOWER(?) OR 
         LOWER(patient_id) LIKE LOWER(?) OR 
-        LOWER(phone) LIKE LOWER(?)`;
+        LOWER(phone) LIKE LOWER(?)
+      )`;
       const searchPattern = `%${search}%`;
       params = [searchPattern, searchPattern, searchPattern];
     }
@@ -186,56 +187,43 @@ export const updatePatient = async (req, res) => {
   }
 };
 
-// Delete patient
+// Delete patient (soft delete: mark as deleted, keep row for FK integrity)
 export const deletePatient = async (req, res) => {
   try {
     const { id: patientIdParam } = req.params;
     
-    console.log('🗑️ DELETE request for patient_id:', patientIdParam);
+    console.log('🗑️ SOFT DELETE request for patient_id:', patientIdParam);
     
-    // Use batch SQL execution to disable foreign keys for the entire transaction
-    const D1_URL = process.env.D1_DATABASE_URL;
-    const CF_API_TOKEN = process.env.CF_API_TOKEN || process.env.D1_AUTH_TOKEN;
-    const match = D1_URL.match(/accounts\/([a-f0-9]+)\/d1\/database\/([a-f0-9-]+)/);
-    const ACCOUNT_ID = match[1];
-    const DATABASE_ID = match[2];
-    const apiUrl = `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/d1/database/${DATABASE_ID}/query`;
+    // Mark patient as deleted instead of hard-deleting (avoids broken foreign keys)
+    const result = await queryD1(
+      'UPDATE patients SET status = ? WHERE patient_id = ?',
+      ['deleted', patientIdParam]
+    );
     
-    // Execute as a batch with foreign keys disabled
-    const batchSQL = [
-      { sql: 'PRAGMA foreign_keys = OFF', params: [] },
-      { sql: 'DELETE FROM patients WHERE patient_id = ?', params: [patientIdParam] },
-      { sql: 'PRAGMA foreign_keys = ON', params: [] }
-    ];
+    console.log('🔄 Soft delete result:', result);
     
-    const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${CF_API_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(batchSQL),
-    });
+    // Verify update
+    const check = await queryD1(
+      'SELECT patient_id, status FROM patients WHERE patient_id = ?',
+      [patientIdParam]
+    );
     
-    const data = await response.json();
-    console.log('🔍 Batch delete response:', JSON.stringify(data));
-    
-    if (!response.ok || !data.success) {
-      const msg = data.errors?.[0]?.message || 'Delete failed';
-      console.error('❌ Delete failed:', msg);
-      return res.status(500).json({ success: false, error: msg });
+    if (!check.results || check.results.length === 0) {
+      console.log('✅ Patient row not found after update (already removed or never existed).');
+      return res.json({ success: true, message: 'Patient deleted successfully' });
     }
     
-    // Verify deletion
-    const check = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [patientIdParam]);
+    const patient = check.results[0];
+    console.log('🔍 Post-delete patient state:', patient);
     
-    if (check.results?.length > 0) {
-      console.error('❌ Patient still exists!');
-      return res.status(500).json({ success: false, error: 'Failed to delete patient' });
+    // Treat status === 'deleted' as successful delete
+    if (patient.status === 'deleted') {
+      console.log('✅ Patient marked as deleted (soft delete).');
+      return res.json({ success: true, message: 'Patient deleted successfully' });
     }
     
-    console.log('✅ Patient deleted and verified');
-    res.json({ success: true, message: 'Patient deleted successfully' });
+    console.error('❌ Failed to mark patient as deleted');
+    return res.status(500).json({ success: false, error: 'Failed to delete patient' });
     
   } catch (err) {
     console.error('❌ Delete error:', err);
