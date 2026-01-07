@@ -191,10 +191,21 @@ export const deletePatient = async (req, res) => {
   try {
     const { id } = req.params;
     
-    console.log('🗑️ Deleting patient and related records for patient_id:', id);
+    console.log('🗑️ DELETE request received for patient_id:', id);
+    console.log('🗑️ Type of ID:', typeof id);
+    
+    // First, check if patient exists
+    const checkResult = await queryD1('SELECT patient_id, name FROM patients WHERE patient_id = ?', [id]);
+    console.log('🔍 Patient lookup result:', checkResult);
+    
+    if (!checkResult.results || checkResult.results.length === 0) {
+      console.log('❌ Patient not found in database with ID:', id);
+      return res.status(404).json({ success: false, error: 'Patient not found' });
+    }
+    
+    console.log('✅ Found patient to delete:', checkResult.results[0]);
     
     // Use a transaction with batch execution to ensure all deletes happen together
-    // This bypasses foreign key issues by deleting everything in one transaction
     const deleteBatch = [
       { sql: 'DELETE FROM diagnosis WHERE patient_id = ?', params: [id] },
       { sql: 'DELETE FROM prescriptions WHERE patient_id = ?', params: [id] },
@@ -208,22 +219,37 @@ export const deletePatient = async (req, res) => {
     ];
     
     // Execute all deletes - ignore individual errors for non-existent records
+    let patientDeleted = false;
     for (const query of deleteBatch) {
       try {
-        await queryD1(query.sql, query.params);
-        console.log(`✅ Executed: ${query.sql.split(' ')[2]}`);
+        const result = await queryD1(query.sql, query.params);
+        const tableName = query.sql.split(' ')[2];
+        console.log(`✅ Executed DELETE on ${tableName}:`, result);
+        
+        if (tableName === 'patients') {
+          patientDeleted = true;
+        }
       } catch (err) {
         // Log but continue - table might not have records or might not exist
         console.warn(`⚠️ Warning for ${query.sql.split(' ')[2]}:`, err.message);
       }
     }
     
-    console.log('✅ Patient deletion completed');
+    // Verify deletion
+    const verifyResult = await queryD1('SELECT patient_id FROM patients WHERE patient_id = ?', [id]);
+    console.log('🔍 Verification check - patient still exists?:', verifyResult.results?.length > 0 ? 'YES ❌' : 'NO ✅');
+    
+    if (verifyResult.results?.length > 0) {
+      console.error('❌ DELETION FAILED - Patient still exists in database!');
+      return res.status(500).json({ success: false, error: 'Failed to delete patient from database' });
+    }
+    
+    console.log('✅ Patient deletion completed and verified');
     
     res.json({ success: true, message: 'Patient and all related records deleted successfully' });
   } catch (err) {
     console.error('❌ Delete patient error:', err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, error: err.message });
   }
 };
 
