@@ -1,7 +1,7 @@
 // backend/routes/patientroutes.js
 import express from 'express';
 import { authenticateToken, requireDoctor } from '../middleware/authMiddleware.js';
-import patientController from '../controller/patientcontroller.js';
+import patientController, { getNextPatientNumber } from '../controller/patientcontroller.js';
 
 const router = express.Router();
 
@@ -12,6 +12,7 @@ router.post('/import', patientController.importPatients);
 // CRUD for patients (TEMPORARILY OPEN FOR TESTING - NO AUTH)
 router.get('/', patientController.getAllPatients);
 router.get('/stats', patientController.getPatientStats);
+router.get('/next-number', getNextPatientNumber);
 router.get('/:id', patientController.getPatientById);
 router.post('/', authenticateToken, requireDoctor, patientController.createPatient);
 router.put('/:id', patientController.updatePatient);
