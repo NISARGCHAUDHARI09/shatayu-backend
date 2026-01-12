@@ -96,6 +96,9 @@ export const createPatient = async (req, res) => {
       patient_type, status, last_visit
     } = req.body;
     
+    // Decide final patient_id: use provided one (e.g. OPD case number) if present, otherwise generate
+    const finalPatientId = patient_id || `P${Date.now()}${Math.floor(Math.random() * 1000)}`;
+
     const sql = `
       INSERT INTO patients (
         patient_id, name, age, gender, phone, email, address,
@@ -105,7 +108,7 @@ export const createPatient = async (req, res) => {
     `;
     
     await queryD1(sql, [
-      patient_id || `P${Date.now()}${Math.floor(Math.random() * 1000)}`,
+      finalPatientId,
       name, age || null, gender || null, phone || null, email || null, address || null,
       city || null, postal_code || null, country || 'India',
       constitution || null, primary_treatment || null, 
@@ -113,7 +116,12 @@ export const createPatient = async (req, res) => {
       last_visit || new Date().toISOString().split('T')[0]
     ]);
     
-    res.status(201).json({ success: true, message: 'Patient created successfully' });
+    // Return the created patient_id so frontend can use it as OPD/case number
+    res.status(201).json({ 
+      success: true, 
+      message: 'Patient created successfully',
+      data: { patient_id: finalPatientId, id: finalPatientId }
+    });
   } catch (err) {
     console.error('Create patient error:', err);
     res.status(500).json({ error: err.message });
@@ -187,73 +195,32 @@ export const updatePatient = async (req, res) => {
   }
 };
 
-// Delete patient HARD from database (remove row; OPD no becomes reusable)
+// Delete patient SOFT: mark as deleted (status), keep row for safety
 export const deletePatient = async (req, res) => {
   try {
     const { id: patientIdParam } = req.params; // this is patient_id / OPD number from frontend
 
-    console.log('🗑️ HARD DELETE request for patient_id:', patientIdParam);
+    console.log('🗑️ SOFT DELETE request for patient_id:', patientIdParam);
 
-    // 1) Look up patient by external patient_id (OPD number)
-    const lookup = await queryD1(
-      'SELECT * FROM patients WHERE patient_id = ?',
+    // Mark patient as deleted; do not remove row to avoid FK problems
+    await queryD1(
+      "UPDATE patients SET status = 'deleted' WHERE patient_id = ?",
       [patientIdParam]
     );
 
-    if (!lookup.results || lookup.results.length === 0) {
-      console.log('⚠️ Patient not found for patient_id:', patientIdParam);
-      return res.status(404).json({ success: false, error: 'Patient not found' });
-    }
-
-    const patientRow = lookup.results[0];
-    const internalId = patientRow.id; // may be undefined on some old D1 schemas
-
-    console.log('🔍 Found patient row for delete:', patientRow);
-
-    // 2) Best-effort cleanup in related tables that use numeric patient_id (if internal id exists)
-    if (typeof internalId !== 'undefined') {
-      try {
-        await queryD1('DELETE FROM diagnosis WHERE patient_id = ?', [internalId]);
-      } catch (err) {
-        console.warn('⚠️ Diagnosis delete skipped/failed:', err.message);
-      }
-
-      try {
-        await queryD1('DELETE FROM draft_bills WHERE patient_id = ?', [internalId]);
-      } catch (err) {
-        console.warn('⚠️ Draft bills delete skipped/failed:', err.message);
-      }
-
-      try {
-        await queryD1('DELETE FROM panchkarma_treatment_plan WHERE patient_id = ?', [internalId]);
-      } catch (err) {
-        console.warn('⚠️ Panchkarma treatment delete skipped/failed:', err.message);
-      }
-    } else {
-      console.warn('⚠️ patients.id column not present in schema; skipping numeric patient_id child clean-up');
-    }
-
-    // 3) Finally, delete the patient row itself by patient_id
-    const deleteResult = await queryD1(
-      'DELETE FROM patients WHERE patient_id = ?',
+    // Optional verification
+    const check = await queryD1(
+      'SELECT patient_id, status FROM patients WHERE patient_id = ?',
       [patientIdParam]
     );
 
-    console.log('🗑️ Patient delete result:', deleteResult);
-
-    // 4) Verify patient is gone
-    const verify = await queryD1(
-      'SELECT patient_id FROM patients WHERE patient_id = ?',
-      [patientIdParam]
-    );
-
-    if (verify.results && verify.results.length > 0) {
-      console.error('❌ Patient row still present after delete attempt');
-      return res.status(500).json({ success: false, error: 'Failed to delete patient from database' });
+    if (!check.results || check.results.length === 0 || check.results[0].status === 'deleted') {
+      console.log('✅ Patient marked as deleted (soft delete).');
+      return res.json({ success: true, message: 'Patient deleted successfully' });
     }
 
-    console.log('✅ Patient fully deleted from database');
-    return res.json({ success: true, message: 'Patient and related data deleted successfully' });
+    console.error('❌ Failed to mark patient as deleted');
+    return res.status(500).json({ success: false, error: 'Failed to delete patient' });
   } catch (err) {
     console.error('❌ Delete error:', err);
     return res.status(500).json({ success: false, error: err.message });
