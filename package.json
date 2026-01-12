@@ -9,7 +9,8 @@
     "init-db": "node scripts/initDatabase.js",
     "create-admin": "node scripts/createAdmin.js",
     "init-d1": "node scripts/initCloudflareD1.js",
-    "create-admin-d1": "node scripts/createAdminD1.js"
+    "create-admin-d1": "node scripts/createAdminD1.js",
+    "add-medicine-number": "node add-medicine-number-column.js"
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",
