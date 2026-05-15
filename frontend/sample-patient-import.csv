@@ -1,0 +1,21 @@
+Patient ID,Name,Age,Gender,Phone,Email,Address,City,State,Country,Postal Code,Constitution,Primary Treatment,Status,Last Visit
+P001,Rajesh Kumar,45,Male,9876543210,rajesh.k@example.com,123 MG Road,Bangalore,Karnataka,India,560001,Vata,Panchakarma,active,2024-11-01
+P002,Priya Sharma,32,Female,9876543211,priya.s@example.com,456 Park Street,Mumbai,Maharashtra,India,400001,Pitta,Herbal Therapy,active,2024-11-05
+P003,Amit Patel,58,Male,9876543212,amit.p@example.com,789 Lake View,Ahmedabad,Gujarat,India,380001,Kapha,Ayurvedic Diet,admitted,2024-11-07
+P004,Sneha Reddy,28,Female,9876543213,sneha.r@example.com,321 Beach Road,Chennai,Tamil Nadu,India,600001,Vata-Pitta,Massage Therapy,active,2024-10-28
+P005,Vikram Singh,41,Male,9876543214,vikram.s@example.com,654 Hill Station,Shimla,Himachal Pradesh,India,171001,Pitta-Kapha,Meditation,discharged,2024-10-15
+P006,Anita Desai,35,Female,9876543215,anita.d@example.com,987 River Side,Pune,Maharashtra,India,411001,Kapha-Vata,Yoga Therapy,active,2024-11-02
+P007,Suresh Menon,52,Male,9876543216,suresh.m@example.com,147 Garden Lane,Kochi,Kerala,India,682001,Vata,Detoxification,active,2024-11-06
+P008,Lakshmi Iyer,29,Female,9876543217,lakshmi.i@example.com,258 Temple Road,Madurai,Tamil Nadu,India,625001,Pitta,Nasyam,active,2024-11-03
+P009,Arjun Rao,37,Male,9876543218,arjun.r@example.com,369 Market Street,Hyderabad,Telangana,India,500001,Kapha,Virechana,admitted,2024-11-08
+P010,Meera Joshi,44,Female,9876543219,meera.j@example.com,741 College Road,Delhi,Delhi,India,110001,Vata-Pitta,Basti,active,2024-10-30
+P011,Ravi Nair,48,Male,9876543220,ravi.n@example.com,852 Business Park,Bangalore,Karnataka,India,560002,Pitta-Kapha,Shirodhara,active,2024-11-04
+P012,Kavita Gupta,33,Female,9876543221,kavita.g@example.com,963 Shopping Complex,Jaipur,Rajasthan,India,302001,Kapha-Vata,Abhyanga,discharged,2024-10-20
+P013,Deepak Verma,56,Male,9876543222,deepak.v@example.com,159 Airport Road,Mumbai,Maharashtra,India,400099,Vata,Udvartana,active,2024-11-01
+P014,Pooja Kapoor,31,Female,9876543223,pooja.k@example.com,267 Metro Station,Delhi,Delhi,India,110002,Pitta,Takradhara,active,2024-11-07
+P015,Manoj Agarwal,42,Male,9876543224,manoj.a@example.com,378 Tech Park,Bangalore,Karnataka,India,560100,Kapha,Lepanam,admitted,2024-11-08
+P016,Sunita Saxena,39,Female,9876543225,sunita.s@example.com,489 Hospital Road,Chennai,Tamil Nadu,India,600002,Vata-Pitta,Nasya,active,2024-10-29
+P017,Ashok Mishra,61,Male,9876543226,ashok.m@example.com,591 Station Road,Kolkata,West Bengal,India,700001,Pitta-Kapha,Raktamokshana,active,2024-11-05
+P018,Geeta Bhatia,27,Female,9876543227,geeta.b@example.com,612 University Area,Pune,Maharashtra,India,411002,Kapha-Vata,Kati Basti,active,2024-11-02
+P019,Sanjay Dube,50,Male,9876543228,sanjay.d@example.com,723 Industrial Area,Indore,Madhya Pradesh,India,452001,Vata,Janu Basti,discharged,2024-10-25
+P020,Neha Malhotra,36,Female,9876543229,neha.m@example.com,834 Residential Complex,Chandigarh,Chandigarh,India,160001,Pitta,Greeva Basti,active,2024-11-06

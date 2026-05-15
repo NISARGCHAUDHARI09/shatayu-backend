@@ -1,0 +1,501 @@
+Patient ID,Name,Age,Gender,Phone,Email,Address,Constitution,Primary Treatment,Status,Last Visit
+P00001,"Patient 1",33,Male,9876500001,patient1@example.com,"1 Test Street, City",Vata-Pitta,"Yoga Therapy",admitted,2024-06-08
+P00002,"Patient 2",77,Female,9876500002,patient2@example.com,"2 Test Street, City",Kapha-Vata,"Abhyanga",active,2024-11-17
+P00003,"Patient 3",35,Other,9876500003,patient3@example.com,"3 Test Street, City",Kapha,"Detoxification",active,2024-05-12
+P00004,"Patient 4",55,Female,9876500004,patient4@example.com,"4 Test Street, City",Pitta,"Meditation",active,2024-01-25
+P00005,"Patient 5",49,Female,9876500005,patient5@example.com,"5 Test Street, City",Kapha,"Shirodhara",admitted,2024-05-15
+P00006,"Patient 6",57,Other,9876500006,patient6@example.com,"6 Test Street, City",Pitta,"Abhyanga",admitted,2024-09-05
+P00007,"Patient 7",66,Male,9876500007,patient7@example.com,"7 Test Street, City",Kapha,"Massage Therapy",active,2024-09-23
+P00008,"Patient 8",78,Other,9876500008,patient8@example.com,"8 Test Street, City",Pitta,"Basti",admitted,2024-06-10
+P00009,"Patient 9",68,Male,9876500009,patient9@example.com,"9 Test Street, City",Vata-Pitta,"Detoxification",discharged,2024-07-01
+P00010,"Patient 10",45,Other,9876500010,patient10@example.com,"10 Test Street, City",Vata-Pitta,"Abhyanga",active,2024-04-14
+P00011,"Patient 11",46,Female,9876500011,patient11@example.com,"11 Test Street, City",Pitta-Kapha,"Meditation",admitted,2024-11-17
+P00012,"Patient 12",51,Female,9876500012,patient12@example.com,"12 Test Street, City",Pitta-Kapha,"Shirodhara",discharged,2024-04-06
+P00013,"Patient 13",69,Female,9876500013,patient13@example.com,"13 Test Street, City",Pitta,"Virechana",discharged,2024-03-19
+P00014,"Patient 14",22,Female,9876500014,patient14@example.com,"14 Test Street, City",Kapha,"Abhyanga",discharged,2024-01-26
+P00015,"Patient 15",37,Male,9876500015,patient15@example.com,"15 Test Street, City",Pitta,"Meditation",admitted,2024-11-13
+P00016,"Patient 16",65,Female,9876500016,patient16@example.com,"16 Test Street, City",Pitta-Kapha,"Shirodhara",active,2024-07-25
+P00017,"Patient 17",29,Male,9876500017,patient17@example.com,"17 Test Street, City",Pitta,"Yoga Therapy",admitted,2024-03-25
+P00018,"Patient 18",75,Other,9876500018,patient18@example.com,"18 Test Street, City",Kapha-Vata,"Ayurvedic Diet",discharged,2024-08-01
+P00019,"Patient 19",53,Female,9876500019,patient19@example.com,"19 Test Street, City",Kapha-Vata,"Meditation",active,2024-12-25
+P00020,"Patient 20",74,Female,9876500020,patient20@example.com,"20 Test Street, City",Vata-Pitta,"Nasyam",active,2024-10-18
+P00021,"Patient 21",23,Male,9876500021,patient21@example.com,"21 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",active,2024-12-01
+P00022,"Patient 22",54,Male,9876500022,patient22@example.com,"22 Test Street, City",Kapha-Vata,"Meditation",admitted,2024-01-27
+P00023,"Patient 23",62,Other,9876500023,patient23@example.com,"23 Test Street, City",Kapha-Vata,"Ayurvedic Diet",discharged,2024-12-07
+P00024,"Patient 24",26,Female,9876500024,patient24@example.com,"24 Test Street, City",Kapha,"Abhyanga",active,2024-05-05
+P00025,"Patient 25",36,Male,9876500025,patient25@example.com,"25 Test Street, City",Vata,"Meditation",discharged,2024-06-01
+P00026,"Patient 26",72,Female,9876500026,patient26@example.com,"26 Test Street, City",Pitta-Kapha,"Meditation",active,2024-11-18
+P00027,"Patient 27",39,Female,9876500027,patient27@example.com,"27 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",active,2024-01-24
+P00028,"Patient 28",30,Other,9876500028,patient28@example.com,"28 Test Street, City",Vata,"Shirodhara",discharged,2024-06-18
+P00029,"Patient 29",24,Female,9876500029,patient29@example.com,"29 Test Street, City",Vata-Pitta,"Abhyanga",active,2024-06-10
+P00030,"Patient 30",58,Other,9876500030,patient30@example.com,"30 Test Street, City",Pitta-Kapha,"Virechana",active,2024-06-19
+P00031,"Patient 31",78,Other,9876500031,patient31@example.com,"31 Test Street, City",Kapha-Vata,"Yoga Therapy",discharged,2024-06-06
+P00032,"Patient 32",59,Female,9876500032,patient32@example.com,"32 Test Street, City",Kapha,"Panchakarma",discharged,2024-04-08
+P00033,"Patient 33",35,Female,9876500033,patient33@example.com,"33 Test Street, City",Pitta-Kapha,"Detoxification",active,2024-05-21
+P00034,"Patient 34",43,Other,9876500034,patient34@example.com,"34 Test Street, City",Pitta-Kapha,"Abhyanga",active,2024-11-22
+P00035,"Patient 35",43,Female,9876500035,patient35@example.com,"35 Test Street, City",Pitta,"Massage Therapy",active,2024-07-14
+P00036,"Patient 36",22,Other,9876500036,patient36@example.com,"36 Test Street, City",Vata-Pitta,"Detoxification",active,2024-12-17
+P00037,"Patient 37",28,Female,9876500037,patient37@example.com,"37 Test Street, City",Pitta,"Yoga Therapy",discharged,2024-07-27
+P00038,"Patient 38",76,Female,9876500038,patient38@example.com,"38 Test Street, City",Vata,"Meditation",discharged,2024-12-18
+P00039,"Patient 39",60,Other,9876500039,patient39@example.com,"39 Test Street, City",Pitta,"Massage Therapy",active,2024-11-28
+P00040,"Patient 40",52,Female,9876500040,patient40@example.com,"40 Test Street, City",Vata-Pitta,"Yoga Therapy",discharged,2024-10-17
+P00041,"Patient 41",35,Female,9876500041,patient41@example.com,"41 Test Street, City",Vata,"Panchakarma",discharged,2024-08-26
+P00042,"Patient 42",75,Other,9876500042,patient42@example.com,"42 Test Street, City",Kapha,"Shirodhara",admitted,2024-08-21
+P00043,"Patient 43",74,Female,9876500043,patient43@example.com,"43 Test Street, City",Pitta-Kapha,"Detoxification",discharged,2024-11-27
+P00044,"Patient 44",64,Male,9876500044,patient44@example.com,"44 Test Street, City",Pitta-Kapha,"Basti",discharged,2024-07-24
+P00045,"Patient 45",62,Other,9876500045,patient45@example.com,"45 Test Street, City",Pitta-Kapha,"Virechana",active,2024-08-16
+P00046,"Patient 46",42,Female,9876500046,patient46@example.com,"46 Test Street, City",Pitta,"Shirodhara",discharged,2024-04-20
+P00047,"Patient 47",57,Male,9876500047,patient47@example.com,"47 Test Street, City",Pitta-Kapha,"Detoxification",admitted,2024-04-25
+P00048,"Patient 48",38,Female,9876500048,patient48@example.com,"48 Test Street, City",Vata,"Ayurvedic Diet",discharged,2024-03-07
+P00049,"Patient 49",55,Other,9876500049,patient49@example.com,"49 Test Street, City",Vata-Pitta,"Virechana",admitted,2024-01-26
+P00050,"Patient 50",28,Other,9876500050,patient50@example.com,"50 Test Street, City",Pitta-Kapha,"Nasyam",discharged,2024-04-01
+P00051,"Patient 51",72,Other,9876500051,patient51@example.com,"51 Test Street, City",Kapha-Vata,"Meditation",admitted,2024-07-20
+P00052,"Patient 52",52,Female,9876500052,patient52@example.com,"52 Test Street, City",Vata-Pitta,"Meditation",active,2024-12-13
+P00053,"Patient 53",40,Female,9876500053,patient53@example.com,"53 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",active,2024-08-06
+P00054,"Patient 54",30,Male,9876500054,patient54@example.com,"54 Test Street, City",Pitta-Kapha,"Abhyanga",active,2024-12-05
+P00055,"Patient 55",47,Male,9876500055,patient55@example.com,"55 Test Street, City",Vata-Pitta,"Abhyanga",admitted,2024-05-14
+P00056,"Patient 56",34,Female,9876500056,patient56@example.com,"56 Test Street, City",Pitta-Kapha,"Meditation",active,2024-12-01
+P00057,"Patient 57",52,Male,9876500057,patient57@example.com,"57 Test Street, City",Pitta,"Massage Therapy",active,2024-10-22
+P00058,"Patient 58",27,Male,9876500058,patient58@example.com,"58 Test Street, City",Vata,"Herbal Therapy",discharged,2024-02-17
+P00059,"Patient 59",60,Female,9876500059,patient59@example.com,"59 Test Street, City",Vata-Pitta,"Basti",active,2024-11-13
+P00060,"Patient 60",55,Male,9876500060,patient60@example.com,"60 Test Street, City",Pitta-Kapha,"Shirodhara",discharged,2024-04-26
+P00061,"Patient 61",25,Male,9876500061,patient61@example.com,"61 Test Street, City",Pitta,"Shirodhara",discharged,2024-09-14
+P00062,"Patient 62",47,Other,9876500062,patient62@example.com,"62 Test Street, City",Kapha-Vata,"Herbal Therapy",admitted,2024-10-08
+P00063,"Patient 63",64,Other,9876500063,patient63@example.com,"63 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",active,2024-01-23
+P00064,"Patient 64",45,Male,9876500064,patient64@example.com,"64 Test Street, City",Pitta-Kapha,"Yoga Therapy",discharged,2024-12-27
+P00065,"Patient 65",31,Male,9876500065,patient65@example.com,"65 Test Street, City",Pitta,"Meditation",admitted,2024-07-11
+P00066,"Patient 66",32,Male,9876500066,patient66@example.com,"66 Test Street, City",Pitta,"Detoxification",discharged,2024-10-11
+P00067,"Patient 67",59,Male,9876500067,patient67@example.com,"67 Test Street, City",Kapha-Vata,"Basti",discharged,2024-04-02
+P00068,"Patient 68",26,Male,9876500068,patient68@example.com,"68 Test Street, City",Pitta,"Virechana",discharged,2024-05-02
+P00069,"Patient 69",26,Female,9876500069,patient69@example.com,"69 Test Street, City",Vata-Pitta,"Nasyam",active,2024-04-19
+P00070,"Patient 70",77,Female,9876500070,patient70@example.com,"70 Test Street, City",Vata-Pitta,"Nasyam",active,2024-01-26
+P00071,"Patient 71",34,Male,9876500071,patient71@example.com,"71 Test Street, City",Kapha,"Detoxification",discharged,2024-07-21
+P00072,"Patient 72",62,Male,9876500072,patient72@example.com,"72 Test Street, City",Vata-Pitta,"Shirodhara",admitted,2024-07-20
+P00073,"Patient 73",27,Female,9876500073,patient73@example.com,"73 Test Street, City",Kapha-Vata,"Virechana",discharged,2024-02-22
+P00074,"Patient 74",64,Other,9876500074,patient74@example.com,"74 Test Street, City",Vata,"Panchakarma",discharged,2024-12-25
+P00075,"Patient 75",39,Other,9876500075,patient75@example.com,"75 Test Street, City",Vata,"Yoga Therapy",admitted,2024-04-23
+P00076,"Patient 76",25,Female,9876500076,patient76@example.com,"76 Test Street, City",Pitta-Kapha,"Virechana",active,2024-04-04
+P00077,"Patient 77",31,Other,9876500077,patient77@example.com,"77 Test Street, City",Vata,"Massage Therapy",discharged,2024-09-01
+P00078,"Patient 78",31,Female,9876500078,patient78@example.com,"78 Test Street, City",Pitta-Kapha,"Yoga Therapy",discharged,2024-09-03
+P00079,"Patient 79",40,Other,9876500079,patient79@example.com,"79 Test Street, City",Vata-Pitta,"Abhyanga",discharged,2024-07-15
+P00080,"Patient 80",55,Female,9876500080,patient80@example.com,"80 Test Street, City",Pitta,"Yoga Therapy",discharged,2024-12-12
+P00081,"Patient 81",47,Female,9876500081,patient81@example.com,"81 Test Street, City",Kapha-Vata,"Abhyanga",active,2024-09-01
+P00082,"Patient 82",32,Female,9876500082,patient82@example.com,"82 Test Street, City",Vata,"Meditation",active,2024-04-15
+P00083,"Patient 83",23,Male,9876500083,patient83@example.com,"83 Test Street, City",Vata,"Panchakarma",active,2024-03-26
+P00084,"Patient 84",36,Female,9876500084,patient84@example.com,"84 Test Street, City",Vata,"Basti",discharged,2024-12-15
+P00085,"Patient 85",63,Female,9876500085,patient85@example.com,"85 Test Street, City",Pitta,"Yoga Therapy",active,2024-04-17
+P00086,"Patient 86",41,Other,9876500086,patient86@example.com,"86 Test Street, City",Vata-Pitta,"Massage Therapy",discharged,2024-09-19
+P00087,"Patient 87",40,Female,9876500087,patient87@example.com,"87 Test Street, City",Kapha-Vata,"Nasyam",active,2024-08-09
+P00088,"Patient 88",59,Other,9876500088,patient88@example.com,"88 Test Street, City",Vata-Pitta,"Yoga Therapy",discharged,2024-12-03
+P00089,"Patient 89",49,Male,9876500089,patient89@example.com,"89 Test Street, City",Kapha,"Yoga Therapy",discharged,2024-01-13
+P00090,"Patient 90",68,Other,9876500090,patient90@example.com,"90 Test Street, City",Pitta,"Shirodhara",discharged,2024-09-02
+P00091,"Patient 91",21,Female,9876500091,patient91@example.com,"91 Test Street, City",Vata-Pitta,"Nasyam",active,2024-10-27
+P00092,"Patient 92",49,Other,9876500092,patient92@example.com,"92 Test Street, City",Vata-Pitta,"Yoga Therapy",discharged,2024-03-05
+P00093,"Patient 93",70,Male,9876500093,patient93@example.com,"93 Test Street, City",Pitta,"Ayurvedic Diet",admitted,2024-12-08
+P00094,"Patient 94",59,Other,9876500094,patient94@example.com,"94 Test Street, City",Kapha,"Shirodhara",discharged,2024-11-14
+P00095,"Patient 95",68,Other,9876500095,patient95@example.com,"95 Test Street, City",Pitta-Kapha,"Shirodhara",active,2024-04-18
+P00096,"Patient 96",68,Male,9876500096,patient96@example.com,"96 Test Street, City",Kapha-Vata,"Basti",discharged,2024-02-10
+P00097,"Patient 97",20,Female,9876500097,patient97@example.com,"97 Test Street, City",Vata,"Detoxification",admitted,2024-02-19
+P00098,"Patient 98",20,Male,9876500098,patient98@example.com,"98 Test Street, City",Vata,"Meditation",admitted,2024-02-08
+P00099,"Patient 99",20,Female,9876500099,patient99@example.com,"99 Test Street, City",Pitta-Kapha,"Meditation",active,2024-06-13
+P00100,"Patient 100",28,Male,9876500100,patient100@example.com,"100 Test Street, City",Kapha-Vata,"Meditation",admitted,2024-12-20
+P00101,"Patient 101",52,Male,9876500101,patient101@example.com,"101 Test Street, City",Kapha-Vata,"Herbal Therapy",admitted,2024-10-09
+P00102,"Patient 102",50,Other,9876500102,patient102@example.com,"102 Test Street, City",Vata,"Shirodhara",discharged,2024-06-02
+P00103,"Patient 103",77,Other,9876500103,patient103@example.com,"103 Test Street, City",Vata-Pitta,"Nasyam",discharged,2024-02-26
+P00104,"Patient 104",62,Other,9876500104,patient104@example.com,"104 Test Street, City",Pitta-Kapha,"Massage Therapy",discharged,2024-03-26
+P00105,"Patient 105",61,Other,9876500105,patient105@example.com,"105 Test Street, City",Kapha-Vata,"Massage Therapy",active,2024-06-03
+P00106,"Patient 106",65,Female,9876500106,patient106@example.com,"106 Test Street, City",Kapha-Vata,"Basti",discharged,2024-03-28
+P00107,"Patient 107",64,Other,9876500107,patient107@example.com,"107 Test Street, City",Vata,"Nasyam",discharged,2024-03-27
+P00108,"Patient 108",47,Female,9876500108,patient108@example.com,"108 Test Street, City",Vata-Pitta,"Nasyam",active,2024-04-21
+P00109,"Patient 109",50,Female,9876500109,patient109@example.com,"109 Test Street, City",Vata,"Panchakarma",active,2024-06-25
+P00110,"Patient 110",74,Male,9876500110,patient110@example.com,"110 Test Street, City",Kapha,"Ayurvedic Diet",discharged,2024-06-26
+P00111,"Patient 111",44,Male,9876500111,patient111@example.com,"111 Test Street, City",Kapha,"Ayurvedic Diet",active,2024-05-28
+P00112,"Patient 112",62,Male,9876500112,patient112@example.com,"112 Test Street, City",Vata,"Detoxification",discharged,2024-08-15
+P00113,"Patient 113",43,Other,9876500113,patient113@example.com,"113 Test Street, City",Kapha,"Nasyam",active,2024-12-25
+P00114,"Patient 114",54,Other,9876500114,patient114@example.com,"114 Test Street, City",Pitta-Kapha,"Basti",active,2024-06-04
+P00115,"Patient 115",66,Other,9876500115,patient115@example.com,"115 Test Street, City",Vata,"Basti",active,2024-01-03
+P00116,"Patient 116",27,Female,9876500116,patient116@example.com,"116 Test Street, City",Vata,"Detoxification",admitted,2024-04-12
+P00117,"Patient 117",47,Other,9876500117,patient117@example.com,"117 Test Street, City",Kapha-Vata,"Basti",admitted,2024-10-17
+P00118,"Patient 118",38,Other,9876500118,patient118@example.com,"118 Test Street, City",Pitta,"Basti",active,2024-02-16
+P00119,"Patient 119",34,Other,9876500119,patient119@example.com,"119 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-01-05
+P00120,"Patient 120",52,Other,9876500120,patient120@example.com,"120 Test Street, City",Vata-Pitta,"Panchakarma",discharged,2024-04-19
+P00121,"Patient 121",46,Female,9876500121,patient121@example.com,"121 Test Street, City",Vata,"Detoxification",active,2024-05-09
+P00122,"Patient 122",77,Other,9876500122,patient122@example.com,"122 Test Street, City",Vata,"Detoxification",active,2024-05-24
+P00123,"Patient 123",31,Other,9876500123,patient123@example.com,"123 Test Street, City",Vata,"Yoga Therapy",active,2024-10-20
+P00124,"Patient 124",57,Female,9876500124,patient124@example.com,"124 Test Street, City",Vata,"Detoxification",admitted,2024-05-28
+P00125,"Patient 125",51,Other,9876500125,patient125@example.com,"125 Test Street, City",Vata,"Panchakarma",active,2024-04-06
+P00126,"Patient 126",37,Female,9876500126,patient126@example.com,"126 Test Street, City",Vata-Pitta,"Yoga Therapy",active,2024-09-08
+P00127,"Patient 127",62,Male,9876500127,patient127@example.com,"127 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-09-26
+P00128,"Patient 128",26,Female,9876500128,patient128@example.com,"128 Test Street, City",Kapha-Vata,"Basti",active,2024-10-24
+P00129,"Patient 129",58,Male,9876500129,patient129@example.com,"129 Test Street, City",Kapha,"Virechana",admitted,2024-02-18
+P00130,"Patient 130",44,Female,9876500130,patient130@example.com,"130 Test Street, City",Kapha-Vata,"Virechana",discharged,2024-03-23
+P00131,"Patient 131",34,Female,9876500131,patient131@example.com,"131 Test Street, City",Pitta-Kapha,"Meditation",admitted,2024-01-19
+P00132,"Patient 132",69,Female,9876500132,patient132@example.com,"132 Test Street, City",Pitta-Kapha,"Abhyanga",active,2024-06-02
+P00133,"Patient 133",20,Female,9876500133,patient133@example.com,"133 Test Street, City",Vata-Pitta,"Meditation",active,2024-01-25
+P00134,"Patient 134",34,Other,9876500134,patient134@example.com,"134 Test Street, City",Vata-Pitta,"Yoga Therapy",active,2024-01-25
+P00135,"Patient 135",65,Female,9876500135,patient135@example.com,"135 Test Street, City",Kapha,"Detoxification",discharged,2024-07-14
+P00136,"Patient 136",39,Female,9876500136,patient136@example.com,"136 Test Street, City",Pitta-Kapha,"Detoxification",active,2024-03-16
+P00137,"Patient 137",23,Male,9876500137,patient137@example.com,"137 Test Street, City",Vata,"Panchakarma",active,2024-06-14
+P00138,"Patient 138",45,Other,9876500138,patient138@example.com,"138 Test Street, City",Pitta-Kapha,"Massage Therapy",active,2024-07-25
+P00139,"Patient 139",25,Other,9876500139,patient139@example.com,"139 Test Street, City",Pitta-Kapha,"Shirodhara",admitted,2024-03-06
+P00140,"Patient 140",79,Male,9876500140,patient140@example.com,"140 Test Street, City",Pitta-Kapha,"Yoga Therapy",active,2024-05-21
+P00141,"Patient 141",57,Male,9876500141,patient141@example.com,"141 Test Street, City",Vata-Pitta,"Virechana",discharged,2024-02-04
+P00142,"Patient 142",22,Other,9876500142,patient142@example.com,"142 Test Street, City",Vata,"Shirodhara",admitted,2024-06-05
+P00143,"Patient 143",61,Female,9876500143,patient143@example.com,"143 Test Street, City",Pitta-Kapha,"Meditation",active,2024-07-03
+P00144,"Patient 144",38,Male,9876500144,patient144@example.com,"144 Test Street, City",Vata,"Detoxification",active,2024-06-07
+P00145,"Patient 145",32,Other,9876500145,patient145@example.com,"145 Test Street, City",Pitta,"Nasyam",discharged,2024-02-27
+P00146,"Patient 146",34,Other,9876500146,patient146@example.com,"146 Test Street, City",Pitta,"Basti",discharged,2024-04-10
+P00147,"Patient 147",51,Other,9876500147,patient147@example.com,"147 Test Street, City",Kapha,"Herbal Therapy",admitted,2024-04-08
+P00148,"Patient 148",39,Other,9876500148,patient148@example.com,"148 Test Street, City",Kapha,"Herbal Therapy",active,2024-03-08
+P00149,"Patient 149",35,Female,9876500149,patient149@example.com,"149 Test Street, City",Kapha,"Yoga Therapy",discharged,2024-09-15
+P00150,"Patient 150",78,Female,9876500150,patient150@example.com,"150 Test Street, City",Pitta,"Shirodhara",active,2024-07-01
+P00151,"Patient 151",74,Female,9876500151,patient151@example.com,"151 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",discharged,2024-04-17
+P00152,"Patient 152",38,Male,9876500152,patient152@example.com,"152 Test Street, City",Kapha-Vata,"Panchakarma",admitted,2024-02-15
+P00153,"Patient 153",34,Other,9876500153,patient153@example.com,"153 Test Street, City",Vata,"Detoxification",discharged,2024-03-19
+P00154,"Patient 154",21,Female,9876500154,patient154@example.com,"154 Test Street, City",Kapha,"Herbal Therapy",active,2024-10-24
+P00155,"Patient 155",49,Female,9876500155,patient155@example.com,"155 Test Street, City",Pitta,"Meditation",active,2024-12-26
+P00156,"Patient 156",78,Female,9876500156,patient156@example.com,"156 Test Street, City",Kapha,"Ayurvedic Diet",discharged,2024-08-12
+P00157,"Patient 157",29,Female,9876500157,patient157@example.com,"157 Test Street, City",Pitta,"Shirodhara",discharged,2024-01-06
+P00158,"Patient 158",73,Other,9876500158,patient158@example.com,"158 Test Street, City",Pitta,"Panchakarma",discharged,2024-11-19
+P00159,"Patient 159",76,Other,9876500159,patient159@example.com,"159 Test Street, City",Kapha,"Detoxification",admitted,2024-11-12
+P00160,"Patient 160",62,Other,9876500160,patient160@example.com,"160 Test Street, City",Vata-Pitta,"Panchakarma",active,2024-05-21
+P00161,"Patient 161",72,Male,9876500161,patient161@example.com,"161 Test Street, City",Vata,"Ayurvedic Diet",active,2024-11-08
+P00162,"Patient 162",22,Female,9876500162,patient162@example.com,"162 Test Street, City",Kapha,"Yoga Therapy",discharged,2024-05-15
+P00163,"Patient 163",24,Other,9876500163,patient163@example.com,"163 Test Street, City",Vata,"Herbal Therapy",active,2024-09-24
+P00164,"Patient 164",78,Female,9876500164,patient164@example.com,"164 Test Street, City",Pitta,"Nasyam",active,2024-01-14
+P00165,"Patient 165",74,Other,9876500165,patient165@example.com,"165 Test Street, City",Kapha-Vata,"Meditation",admitted,2024-09-01
+P00166,"Patient 166",53,Female,9876500166,patient166@example.com,"166 Test Street, City",Pitta,"Panchakarma",admitted,2024-08-15
+P00167,"Patient 167",41,Other,9876500167,patient167@example.com,"167 Test Street, City",Pitta,"Yoga Therapy",admitted,2024-12-21
+P00168,"Patient 168",67,Male,9876500168,patient168@example.com,"168 Test Street, City",Pitta-Kapha,"Virechana",active,2024-06-17
+P00169,"Patient 169",56,Other,9876500169,patient169@example.com,"169 Test Street, City",Kapha-Vata,"Virechana",discharged,2024-10-12
+P00170,"Patient 170",43,Female,9876500170,patient170@example.com,"170 Test Street, City",Vata-Pitta,"Detoxification",admitted,2024-03-11
+P00171,"Patient 171",76,Other,9876500171,patient171@example.com,"171 Test Street, City",Kapha-Vata,"Yoga Therapy",discharged,2024-04-01
+P00172,"Patient 172",59,Female,9876500172,patient172@example.com,"172 Test Street, City",Pitta-Kapha,"Herbal Therapy",admitted,2024-12-20
+P00173,"Patient 173",49,Male,9876500173,patient173@example.com,"173 Test Street, City",Kapha-Vata,"Abhyanga",active,2024-03-15
+P00174,"Patient 174",61,Other,9876500174,patient174@example.com,"174 Test Street, City",Vata,"Detoxification",admitted,2024-01-02
+P00175,"Patient 175",25,Male,9876500175,patient175@example.com,"175 Test Street, City",Kapha-Vata,"Panchakarma",discharged,2024-06-23
+P00176,"Patient 176",22,Male,9876500176,patient176@example.com,"176 Test Street, City",Pitta,"Meditation",admitted,2024-01-16
+P00177,"Patient 177",45,Male,9876500177,patient177@example.com,"177 Test Street, City",Vata,"Ayurvedic Diet",discharged,2024-08-02
+P00178,"Patient 178",58,Female,9876500178,patient178@example.com,"178 Test Street, City",Kapha-Vata,"Panchakarma",active,2024-12-10
+P00179,"Patient 179",73,Female,9876500179,patient179@example.com,"179 Test Street, City",Pitta,"Abhyanga",admitted,2024-12-16
+P00180,"Patient 180",37,Male,9876500180,patient180@example.com,"180 Test Street, City",Pitta,"Nasyam",active,2024-05-09
+P00181,"Patient 181",26,Female,9876500181,patient181@example.com,"181 Test Street, City",Pitta,"Basti",discharged,2024-12-02
+P00182,"Patient 182",42,Female,9876500182,patient182@example.com,"182 Test Street, City",Kapha-Vata,"Massage Therapy",active,2024-09-05
+P00183,"Patient 183",50,Other,9876500183,patient183@example.com,"183 Test Street, City",Vata,"Virechana",discharged,2024-04-19
+P00184,"Patient 184",49,Female,9876500184,patient184@example.com,"184 Test Street, City",Vata,"Detoxification",active,2024-03-04
+P00185,"Patient 185",49,Female,9876500185,patient185@example.com,"185 Test Street, City",Vata-Pitta,"Basti",active,2024-04-25
+P00186,"Patient 186",47,Male,9876500186,patient186@example.com,"186 Test Street, City",Vata,"Herbal Therapy",active,2024-04-20
+P00187,"Patient 187",54,Female,9876500187,patient187@example.com,"187 Test Street, City",Vata,"Panchakarma",admitted,2024-11-10
+P00188,"Patient 188",59,Female,9876500188,patient188@example.com,"188 Test Street, City",Pitta-Kapha,"Panchakarma",admitted,2024-07-24
+P00189,"Patient 189",26,Other,9876500189,patient189@example.com,"189 Test Street, City",Kapha,"Massage Therapy",admitted,2024-02-03
+P00190,"Patient 190",37,Male,9876500190,patient190@example.com,"190 Test Street, City",Kapha,"Detoxification",active,2024-03-01
+P00191,"Patient 191",30,Male,9876500191,patient191@example.com,"191 Test Street, City",Vata-Pitta,"Virechana",discharged,2024-12-16
+P00192,"Patient 192",53,Female,9876500192,patient192@example.com,"192 Test Street, City",Pitta,"Detoxification",admitted,2024-08-10
+P00193,"Patient 193",40,Female,9876500193,patient193@example.com,"193 Test Street, City",Vata,"Basti",admitted,2024-08-06
+P00194,"Patient 194",56,Other,9876500194,patient194@example.com,"194 Test Street, City",Kapha-Vata,"Ayurvedic Diet",active,2024-08-07
+P00195,"Patient 195",31,Male,9876500195,patient195@example.com,"195 Test Street, City",Kapha,"Ayurvedic Diet",admitted,2024-03-04
+P00196,"Patient 196",76,Other,9876500196,patient196@example.com,"196 Test Street, City",Vata-Pitta,"Ayurvedic Diet",admitted,2024-04-06
+P00197,"Patient 197",32,Other,9876500197,patient197@example.com,"197 Test Street, City",Kapha,"Yoga Therapy",active,2024-01-27
+P00198,"Patient 198",77,Male,9876500198,patient198@example.com,"198 Test Street, City",Vata-Pitta,"Shirodhara",discharged,2024-06-25
+P00199,"Patient 199",66,Female,9876500199,patient199@example.com,"199 Test Street, City",Vata,"Nasyam",active,2024-12-03
+P00200,"Patient 200",38,Other,9876500200,patient200@example.com,"200 Test Street, City",Kapha-Vata,"Meditation",admitted,2024-08-28
+P00201,"Patient 201",77,Female,9876500201,patient201@example.com,"201 Test Street, City",Pitta,"Basti",admitted,2024-04-15
+P00202,"Patient 202",43,Male,9876500202,patient202@example.com,"202 Test Street, City",Pitta,"Herbal Therapy",active,2024-08-11
+P00203,"Patient 203",72,Other,9876500203,patient203@example.com,"203 Test Street, City",Vata-Pitta,"Virechana",active,2024-02-26
+P00204,"Patient 204",64,Female,9876500204,patient204@example.com,"204 Test Street, City",Vata-Pitta,"Meditation",active,2024-09-04
+P00205,"Patient 205",46,Female,9876500205,patient205@example.com,"205 Test Street, City",Vata,"Basti",active,2024-11-11
+P00206,"Patient 206",23,Female,9876500206,patient206@example.com,"206 Test Street, City",Pitta-Kapha,"Virechana",discharged,2024-11-28
+P00207,"Patient 207",26,Other,9876500207,patient207@example.com,"207 Test Street, City",Vata-Pitta,"Meditation",admitted,2024-09-28
+P00208,"Patient 208",43,Female,9876500208,patient208@example.com,"208 Test Street, City",Kapha-Vata,"Ayurvedic Diet",active,2024-01-12
+P00209,"Patient 209",43,Male,9876500209,patient209@example.com,"209 Test Street, City",Kapha-Vata,"Massage Therapy",discharged,2024-11-18
+P00210,"Patient 210",58,Male,9876500210,patient210@example.com,"210 Test Street, City",Vata,"Meditation",active,2024-06-10
+P00211,"Patient 211",39,Female,9876500211,patient211@example.com,"211 Test Street, City",Pitta,"Massage Therapy",discharged,2024-07-06
+P00212,"Patient 212",67,Other,9876500212,patient212@example.com,"212 Test Street, City",Pitta,"Meditation",discharged,2024-01-20
+P00213,"Patient 213",43,Female,9876500213,patient213@example.com,"213 Test Street, City",Kapha-Vata,"Virechana",discharged,2024-04-11
+P00214,"Patient 214",42,Male,9876500214,patient214@example.com,"214 Test Street, City",Vata-Pitta,"Massage Therapy",active,2024-09-11
+P00215,"Patient 215",68,Female,9876500215,patient215@example.com,"215 Test Street, City",Kapha,"Massage Therapy",active,2024-11-10
+P00216,"Patient 216",42,Female,9876500216,patient216@example.com,"216 Test Street, City",Kapha-Vata,"Ayurvedic Diet",active,2024-03-01
+P00217,"Patient 217",25,Other,9876500217,patient217@example.com,"217 Test Street, City",Pitta-Kapha,"Detoxification",active,2024-07-09
+P00218,"Patient 218",60,Other,9876500218,patient218@example.com,"218 Test Street, City",Pitta-Kapha,"Basti",discharged,2024-04-19
+P00219,"Patient 219",60,Male,9876500219,patient219@example.com,"219 Test Street, City",Vata-Pitta,"Meditation",discharged,2024-07-28
+P00220,"Patient 220",31,Male,9876500220,patient220@example.com,"220 Test Street, City",Vata-Pitta,"Herbal Therapy",admitted,2024-09-10
+P00221,"Patient 221",50,Female,9876500221,patient221@example.com,"221 Test Street, City",Vata,"Nasyam",discharged,2024-12-23
+P00222,"Patient 222",39,Other,9876500222,patient222@example.com,"222 Test Street, City",Pitta,"Nasyam",discharged,2024-11-22
+P00223,"Patient 223",36,Female,9876500223,patient223@example.com,"223 Test Street, City",Vata-Pitta,"Massage Therapy",discharged,2024-05-28
+P00224,"Patient 224",60,Other,9876500224,patient224@example.com,"224 Test Street, City",Vata-Pitta,"Basti",active,2024-06-18
+P00225,"Patient 225",33,Other,9876500225,patient225@example.com,"225 Test Street, City",Vata-Pitta,"Nasyam",active,2024-02-04
+P00226,"Patient 226",39,Other,9876500226,patient226@example.com,"226 Test Street, City",Vata,"Abhyanga",active,2024-05-07
+P00227,"Patient 227",24,Female,9876500227,patient227@example.com,"227 Test Street, City",Vata-Pitta,"Basti",admitted,2024-04-26
+P00228,"Patient 228",67,Female,9876500228,patient228@example.com,"228 Test Street, City",Kapha-Vata,"Basti",admitted,2024-03-07
+P00229,"Patient 229",74,Female,9876500229,patient229@example.com,"229 Test Street, City",Vata,"Herbal Therapy",active,2024-07-23
+P00230,"Patient 230",62,Female,9876500230,patient230@example.com,"230 Test Street, City",Kapha,"Ayurvedic Diet",active,2024-03-27
+P00231,"Patient 231",29,Other,9876500231,patient231@example.com,"231 Test Street, City",Pitta-Kapha,"Massage Therapy",admitted,2024-11-25
+P00232,"Patient 232",21,Other,9876500232,patient232@example.com,"232 Test Street, City",Vata-Pitta,"Abhyanga",discharged,2024-02-26
+P00233,"Patient 233",48,Female,9876500233,patient233@example.com,"233 Test Street, City",Pitta-Kapha,"Herbal Therapy",active,2024-08-24
+P00234,"Patient 234",58,Other,9876500234,patient234@example.com,"234 Test Street, City",Pitta-Kapha,"Detoxification",active,2024-03-22
+P00235,"Patient 235",36,Other,9876500235,patient235@example.com,"235 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",active,2024-03-16
+P00236,"Patient 236",67,Other,9876500236,patient236@example.com,"236 Test Street, City",Pitta,"Massage Therapy",discharged,2024-04-02
+P00237,"Patient 237",79,Male,9876500237,patient237@example.com,"237 Test Street, City",Kapha,"Nasyam",discharged,2024-07-06
+P00238,"Patient 238",26,Female,9876500238,patient238@example.com,"238 Test Street, City",Vata-Pitta,"Yoga Therapy",discharged,2024-06-22
+P00239,"Patient 239",59,Female,9876500239,patient239@example.com,"239 Test Street, City",Kapha,"Panchakarma",admitted,2024-02-01
+P00240,"Patient 240",31,Female,9876500240,patient240@example.com,"240 Test Street, City",Kapha,"Herbal Therapy",active,2024-01-16
+P00241,"Patient 241",76,Other,9876500241,patient241@example.com,"241 Test Street, City",Vata,"Ayurvedic Diet",discharged,2024-09-12
+P00242,"Patient 242",29,Female,9876500242,patient242@example.com,"242 Test Street, City",Vata,"Abhyanga",active,2024-01-19
+P00243,"Patient 243",73,Male,9876500243,patient243@example.com,"243 Test Street, City",Vata,"Detoxification",active,2024-08-01
+P00244,"Patient 244",59,Other,9876500244,patient244@example.com,"244 Test Street, City",Kapha,"Ayurvedic Diet",active,2024-04-07
+P00245,"Patient 245",50,Female,9876500245,patient245@example.com,"245 Test Street, City",Vata,"Basti",active,2024-06-11
+P00246,"Patient 246",20,Male,9876500246,patient246@example.com,"246 Test Street, City",Vata,"Panchakarma",discharged,2024-01-17
+P00247,"Patient 247",65,Other,9876500247,patient247@example.com,"247 Test Street, City",Kapha,"Meditation",admitted,2024-02-24
+P00248,"Patient 248",58,Female,9876500248,patient248@example.com,"248 Test Street, City",Pitta-Kapha,"Meditation",active,2024-12-05
+P00249,"Patient 249",73,Male,9876500249,patient249@example.com,"249 Test Street, City",Vata,"Yoga Therapy",admitted,2024-09-12
+P00250,"Patient 250",75,Other,9876500250,patient250@example.com,"250 Test Street, City",Pitta-Kapha,"Meditation",admitted,2024-10-15
+P00251,"Patient 251",78,Male,9876500251,patient251@example.com,"251 Test Street, City",Vata,"Basti",active,2024-06-17
+P00252,"Patient 252",70,Other,9876500252,patient252@example.com,"252 Test Street, City",Kapha,"Massage Therapy",discharged,2024-01-19
+P00253,"Patient 253",42,Male,9876500253,patient253@example.com,"253 Test Street, City",Pitta-Kapha,"Massage Therapy",discharged,2024-04-04
+P00254,"Patient 254",69,Other,9876500254,patient254@example.com,"254 Test Street, City",Vata-Pitta,"Shirodhara",active,2024-09-07
+P00255,"Patient 255",61,Female,9876500255,patient255@example.com,"255 Test Street, City",Kapha-Vata,"Ayurvedic Diet",admitted,2024-09-10
+P00256,"Patient 256",49,Other,9876500256,patient256@example.com,"256 Test Street, City",Kapha-Vata,"Shirodhara",active,2024-07-08
+P00257,"Patient 257",77,Female,9876500257,patient257@example.com,"257 Test Street, City",Kapha,"Abhyanga",active,2024-06-27
+P00258,"Patient 258",77,Male,9876500258,patient258@example.com,"258 Test Street, City",Pitta,"Massage Therapy",active,2024-07-16
+P00259,"Patient 259",36,Other,9876500259,patient259@example.com,"259 Test Street, City",Pitta,"Meditation",discharged,2024-12-16
+P00260,"Patient 260",57,Male,9876500260,patient260@example.com,"260 Test Street, City",Pitta-Kapha,"Basti",admitted,2024-09-14
+P00261,"Patient 261",31,Male,9876500261,patient261@example.com,"261 Test Street, City",Vata-Pitta,"Yoga Therapy",admitted,2024-08-18
+P00262,"Patient 262",45,Other,9876500262,patient262@example.com,"262 Test Street, City",Vata-Pitta,"Nasyam",active,2024-09-08
+P00263,"Patient 263",44,Female,9876500263,patient263@example.com,"263 Test Street, City",Kapha,"Yoga Therapy",active,2024-08-08
+P00264,"Patient 264",29,Female,9876500264,patient264@example.com,"264 Test Street, City",Kapha-Vata,"Abhyanga",active,2024-05-22
+P00265,"Patient 265",50,Female,9876500265,patient265@example.com,"265 Test Street, City",Kapha,"Virechana",admitted,2024-09-19
+P00266,"Patient 266",70,Other,9876500266,patient266@example.com,"266 Test Street, City",Vata-Pitta,"Ayurvedic Diet",admitted,2024-05-27
+P00267,"Patient 267",62,Other,9876500267,patient267@example.com,"267 Test Street, City",Vata,"Nasyam",discharged,2024-03-24
+P00268,"Patient 268",73,Other,9876500268,patient268@example.com,"268 Test Street, City",Kapha-Vata,"Virechana",active,2024-05-21
+P00269,"Patient 269",30,Male,9876500269,patient269@example.com,"269 Test Street, City",Pitta,"Yoga Therapy",discharged,2024-05-23
+P00270,"Patient 270",65,Other,9876500270,patient270@example.com,"270 Test Street, City",Vata-Pitta,"Nasyam",active,2024-12-20
+P00271,"Patient 271",48,Female,9876500271,patient271@example.com,"271 Test Street, City",Pitta-Kapha,"Massage Therapy",active,2024-08-27
+P00272,"Patient 272",52,Male,9876500272,patient272@example.com,"272 Test Street, City",Pitta,"Meditation",active,2024-11-15
+P00273,"Patient 273",56,Other,9876500273,patient273@example.com,"273 Test Street, City",Vata,"Basti",active,2024-12-07
+P00274,"Patient 274",61,Female,9876500274,patient274@example.com,"274 Test Street, City",Kapha-Vata,"Meditation",active,2024-08-05
+P00275,"Patient 275",34,Other,9876500275,patient275@example.com,"275 Test Street, City",Pitta-Kapha,"Abhyanga",admitted,2024-08-16
+P00276,"Patient 276",38,Male,9876500276,patient276@example.com,"276 Test Street, City",Pitta-Kapha,"Yoga Therapy",active,2024-07-08
+P00277,"Patient 277",43,Other,9876500277,patient277@example.com,"277 Test Street, City",Kapha-Vata,"Shirodhara",active,2024-12-12
+P00278,"Patient 278",22,Other,9876500278,patient278@example.com,"278 Test Street, City",Vata,"Detoxification",active,2024-03-21
+P00279,"Patient 279",73,Female,9876500279,patient279@example.com,"279 Test Street, City",Pitta,"Detoxification",discharged,2024-07-13
+P00280,"Patient 280",73,Other,9876500280,patient280@example.com,"280 Test Street, City",Kapha-Vata,"Herbal Therapy",admitted,2024-09-13
+P00281,"Patient 281",60,Male,9876500281,patient281@example.com,"281 Test Street, City",Kapha-Vata,"Massage Therapy",admitted,2024-09-20
+P00282,"Patient 282",27,Female,9876500282,patient282@example.com,"282 Test Street, City",Pitta-Kapha,"Massage Therapy",admitted,2024-10-15
+P00283,"Patient 283",34,Female,9876500283,patient283@example.com,"283 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-03-12
+P00284,"Patient 284",53,Male,9876500284,patient284@example.com,"284 Test Street, City",Vata,"Virechana",admitted,2024-05-24
+P00285,"Patient 285",48,Male,9876500285,patient285@example.com,"285 Test Street, City",Pitta-Kapha,"Nasyam",discharged,2024-10-02
+P00286,"Patient 286",79,Other,9876500286,patient286@example.com,"286 Test Street, City",Kapha-Vata,"Abhyanga",discharged,2024-06-16
+P00287,"Patient 287",69,Female,9876500287,patient287@example.com,"287 Test Street, City",Kapha-Vata,"Detoxification",active,2024-04-20
+P00288,"Patient 288",23,Other,9876500288,patient288@example.com,"288 Test Street, City",Pitta-Kapha,"Nasyam",admitted,2024-04-01
+P00289,"Patient 289",76,Female,9876500289,patient289@example.com,"289 Test Street, City",Pitta,"Basti",active,2024-05-15
+P00290,"Patient 290",69,Other,9876500290,patient290@example.com,"290 Test Street, City",Kapha-Vata,"Detoxification",discharged,2024-09-11
+P00291,"Patient 291",71,Male,9876500291,patient291@example.com,"291 Test Street, City",Vata-Pitta,"Nasyam",admitted,2024-12-28
+P00292,"Patient 292",54,Other,9876500292,patient292@example.com,"292 Test Street, City",Kapha-Vata,"Ayurvedic Diet",active,2024-10-14
+P00293,"Patient 293",62,Female,9876500293,patient293@example.com,"293 Test Street, City",Pitta,"Abhyanga",active,2024-10-05
+P00294,"Patient 294",46,Other,9876500294,patient294@example.com,"294 Test Street, City",Pitta-Kapha,"Nasyam",discharged,2024-01-14
+P00295,"Patient 295",22,Female,9876500295,patient295@example.com,"295 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",admitted,2024-04-08
+P00296,"Patient 296",65,Female,9876500296,patient296@example.com,"296 Test Street, City",Vata,"Shirodhara",active,2024-05-26
+P00297,"Patient 297",45,Other,9876500297,patient297@example.com,"297 Test Street, City",Kapha,"Shirodhara",active,2024-05-28
+P00298,"Patient 298",28,Female,9876500298,patient298@example.com,"298 Test Street, City",Vata,"Shirodhara",active,2024-05-07
+P00299,"Patient 299",69,Male,9876500299,patient299@example.com,"299 Test Street, City",Vata,"Herbal Therapy",admitted,2024-08-02
+P00300,"Patient 300",70,Male,9876500300,patient300@example.com,"300 Test Street, City",Kapha-Vata,"Ayurvedic Diet",active,2024-12-28
+P00301,"Patient 301",66,Female,9876500301,patient301@example.com,"301 Test Street, City",Pitta-Kapha,"Herbal Therapy",active,2024-06-11
+P00302,"Patient 302",24,Female,9876500302,patient302@example.com,"302 Test Street, City",Vata-Pitta,"Meditation",admitted,2024-10-22
+P00303,"Patient 303",38,Female,9876500303,patient303@example.com,"303 Test Street, City",Kapha,"Panchakarma",active,2024-03-06
+P00304,"Patient 304",75,Male,9876500304,patient304@example.com,"304 Test Street, City",Vata,"Meditation",admitted,2024-11-09
+P00305,"Patient 305",50,Male,9876500305,patient305@example.com,"305 Test Street, City",Kapha-Vata,"Abhyanga",discharged,2024-07-02
+P00306,"Patient 306",56,Other,9876500306,patient306@example.com,"306 Test Street, City",Kapha,"Yoga Therapy",admitted,2024-06-24
+P00307,"Patient 307",61,Male,9876500307,patient307@example.com,"307 Test Street, City",Vata-Pitta,"Shirodhara",discharged,2024-10-22
+P00308,"Patient 308",34,Male,9876500308,patient308@example.com,"308 Test Street, City",Vata-Pitta,"Yoga Therapy",admitted,2024-09-09
+P00309,"Patient 309",68,Female,9876500309,patient309@example.com,"309 Test Street, City",Vata-Pitta,"Shirodhara",active,2024-03-27
+P00310,"Patient 310",67,Male,9876500310,patient310@example.com,"310 Test Street, City",Vata-Pitta,"Detoxification",discharged,2024-01-16
+P00311,"Patient 311",49,Male,9876500311,patient311@example.com,"311 Test Street, City",Pitta,"Shirodhara",discharged,2024-04-17
+P00312,"Patient 312",31,Other,9876500312,patient312@example.com,"312 Test Street, City",Kapha,"Meditation",admitted,2024-10-22
+P00313,"Patient 313",31,Male,9876500313,patient313@example.com,"313 Test Street, City",Pitta,"Herbal Therapy",active,2024-08-20
+P00314,"Patient 314",65,Female,9876500314,patient314@example.com,"314 Test Street, City",Vata,"Meditation",discharged,2024-01-18
+P00315,"Patient 315",59,Female,9876500315,patient315@example.com,"315 Test Street, City",Vata,"Massage Therapy",active,2024-12-21
+P00316,"Patient 316",54,Female,9876500316,patient316@example.com,"316 Test Street, City",Pitta,"Basti",discharged,2024-08-22
+P00317,"Patient 317",28,Male,9876500317,patient317@example.com,"317 Test Street, City",Pitta,"Basti",admitted,2024-04-05
+P00318,"Patient 318",64,Male,9876500318,patient318@example.com,"318 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-07-22
+P00319,"Patient 319",39,Other,9876500319,patient319@example.com,"319 Test Street, City",Pitta,"Shirodhara",admitted,2024-09-24
+P00320,"Patient 320",51,Male,9876500320,patient320@example.com,"320 Test Street, City",Vata,"Ayurvedic Diet",admitted,2024-10-01
+P00321,"Patient 321",52,Female,9876500321,patient321@example.com,"321 Test Street, City",Kapha,"Basti",active,2024-10-25
+P00322,"Patient 322",75,Female,9876500322,patient322@example.com,"322 Test Street, City",Vata,"Virechana",active,2024-08-16
+P00323,"Patient 323",79,Other,9876500323,patient323@example.com,"323 Test Street, City",Kapha-Vata,"Detoxification",active,2024-08-23
+P00324,"Patient 324",54,Female,9876500324,patient324@example.com,"324 Test Street, City",Kapha-Vata,"Virechana",discharged,2024-12-13
+P00325,"Patient 325",52,Male,9876500325,patient325@example.com,"325 Test Street, City",Vata-Pitta,"Yoga Therapy",discharged,2024-03-06
+P00326,"Patient 326",64,Female,9876500326,patient326@example.com,"326 Test Street, City",Vata,"Shirodhara",admitted,2024-09-12
+P00327,"Patient 327",53,Female,9876500327,patient327@example.com,"327 Test Street, City",Vata-Pitta,"Panchakarma",active,2024-03-21
+P00328,"Patient 328",50,Other,9876500328,patient328@example.com,"328 Test Street, City",Pitta-Kapha,"Panchakarma",discharged,2024-02-06
+P00329,"Patient 329",62,Male,9876500329,patient329@example.com,"329 Test Street, City",Pitta,"Virechana",active,2024-05-17
+P00330,"Patient 330",38,Female,9876500330,patient330@example.com,"330 Test Street, City",Vata,"Detoxification",active,2024-03-22
+P00331,"Patient 331",38,Male,9876500331,patient331@example.com,"331 Test Street, City",Pitta,"Shirodhara",discharged,2024-04-08
+P00332,"Patient 332",29,Other,9876500332,patient332@example.com,"332 Test Street, City",Vata,"Abhyanga",discharged,2024-08-26
+P00333,"Patient 333",58,Female,9876500333,patient333@example.com,"333 Test Street, City",Vata-Pitta,"Nasyam",admitted,2024-05-01
+P00334,"Patient 334",44,Male,9876500334,patient334@example.com,"334 Test Street, City",Kapha,"Abhyanga",admitted,2024-11-11
+P00335,"Patient 335",73,Female,9876500335,patient335@example.com,"335 Test Street, City",Kapha,"Shirodhara",admitted,2024-10-18
+P00336,"Patient 336",37,Other,9876500336,patient336@example.com,"336 Test Street, City",Vata,"Detoxification",discharged,2024-12-13
+P00337,"Patient 337",62,Other,9876500337,patient337@example.com,"337 Test Street, City",Kapha,"Panchakarma",active,2024-08-04
+P00338,"Patient 338",59,Female,9876500338,patient338@example.com,"338 Test Street, City",Kapha,"Basti",admitted,2024-09-06
+P00339,"Patient 339",79,Other,9876500339,patient339@example.com,"339 Test Street, City",Pitta-Kapha,"Abhyanga",discharged,2024-07-27
+P00340,"Patient 340",23,Other,9876500340,patient340@example.com,"340 Test Street, City",Kapha,"Meditation",discharged,2024-04-03
+P00341,"Patient 341",43,Female,9876500341,patient341@example.com,"341 Test Street, City",Pitta-Kapha,"Massage Therapy",admitted,2024-06-23
+P00342,"Patient 342",31,Male,9876500342,patient342@example.com,"342 Test Street, City",Vata-Pitta,"Virechana",admitted,2024-03-06
+P00343,"Patient 343",28,Female,9876500343,patient343@example.com,"343 Test Street, City",Pitta,"Massage Therapy",discharged,2024-09-14
+P00344,"Patient 344",26,Female,9876500344,patient344@example.com,"344 Test Street, City",Vata-Pitta,"Massage Therapy",admitted,2024-07-14
+P00345,"Patient 345",27,Other,9876500345,patient345@example.com,"345 Test Street, City",Kapha,"Massage Therapy",admitted,2024-02-04
+P00346,"Patient 346",53,Male,9876500346,patient346@example.com,"346 Test Street, City",Kapha,"Panchakarma",admitted,2024-11-23
+P00347,"Patient 347",38,Other,9876500347,patient347@example.com,"347 Test Street, City",Kapha,"Ayurvedic Diet",active,2024-05-09
+P00348,"Patient 348",68,Other,9876500348,patient348@example.com,"348 Test Street, City",Kapha,"Abhyanga",discharged,2024-10-19
+P00349,"Patient 349",74,Other,9876500349,patient349@example.com,"349 Test Street, City",Vata,"Panchakarma",discharged,2024-12-20
+P00350,"Patient 350",23,Male,9876500350,patient350@example.com,"350 Test Street, City",Kapha-Vata,"Detoxification",admitted,2024-04-10
+P00351,"Patient 351",55,Female,9876500351,patient351@example.com,"351 Test Street, City",Vata,"Meditation",admitted,2024-12-01
+P00352,"Patient 352",51,Male,9876500352,patient352@example.com,"352 Test Street, City",Vata,"Basti",discharged,2024-05-12
+P00353,"Patient 353",55,Male,9876500353,patient353@example.com,"353 Test Street, City",Vata,"Panchakarma",admitted,2024-09-20
+P00354,"Patient 354",70,Female,9876500354,patient354@example.com,"354 Test Street, City",Vata-Pitta,"Yoga Therapy",discharged,2024-04-12
+P00355,"Patient 355",63,Female,9876500355,patient355@example.com,"355 Test Street, City",Kapha-Vata,"Shirodhara",active,2024-11-27
+P00356,"Patient 356",65,Female,9876500356,patient356@example.com,"356 Test Street, City",Pitta,"Yoga Therapy",active,2024-12-17
+P00357,"Patient 357",21,Female,9876500357,patient357@example.com,"357 Test Street, City",Kapha,"Nasyam",admitted,2024-06-11
+P00358,"Patient 358",73,Male,9876500358,patient358@example.com,"358 Test Street, City",Pitta-Kapha,"Nasyam",active,2024-01-06
+P00359,"Patient 359",74,Female,9876500359,patient359@example.com,"359 Test Street, City",Pitta,"Basti",discharged,2024-10-10
+P00360,"Patient 360",48,Other,9876500360,patient360@example.com,"360 Test Street, City",Pitta,"Meditation",active,2024-06-28
+P00361,"Patient 361",74,Male,9876500361,patient361@example.com,"361 Test Street, City",Vata-Pitta,"Panchakarma",discharged,2024-12-15
+P00362,"Patient 362",27,Male,9876500362,patient362@example.com,"362 Test Street, City",Pitta,"Detoxification",admitted,2024-03-01
+P00363,"Patient 363",70,Male,9876500363,patient363@example.com,"363 Test Street, City",Vata,"Basti",discharged,2024-01-27
+P00364,"Patient 364",74,Other,9876500364,patient364@example.com,"364 Test Street, City",Pitta-Kapha,"Virechana",admitted,2024-09-13
+P00365,"Patient 365",23,Male,9876500365,patient365@example.com,"365 Test Street, City",Kapha-Vata,"Massage Therapy",admitted,2024-04-14
+P00366,"Patient 366",26,Female,9876500366,patient366@example.com,"366 Test Street, City",Vata-Pitta,"Detoxification",active,2024-10-10
+P00367,"Patient 367",60,Female,9876500367,patient367@example.com,"367 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-03-04
+P00368,"Patient 368",71,Female,9876500368,patient368@example.com,"368 Test Street, City",Pitta-Kapha,"Abhyanga",active,2024-01-16
+P00369,"Patient 369",25,Other,9876500369,patient369@example.com,"369 Test Street, City",Pitta-Kapha,"Herbal Therapy",active,2024-02-03
+P00370,"Patient 370",77,Other,9876500370,patient370@example.com,"370 Test Street, City",Vata-Pitta,"Nasyam",discharged,2024-10-25
+P00371,"Patient 371",34,Male,9876500371,patient371@example.com,"371 Test Street, City",Kapha-Vata,"Basti",active,2024-11-12
+P00372,"Patient 372",39,Other,9876500372,patient372@example.com,"372 Test Street, City",Kapha,"Herbal Therapy",active,2024-03-24
+P00373,"Patient 373",70,Female,9876500373,patient373@example.com,"373 Test Street, City",Pitta,"Meditation",discharged,2024-05-28
+P00374,"Patient 374",61,Other,9876500374,patient374@example.com,"374 Test Street, City",Pitta,"Panchakarma",discharged,2024-07-03
+P00375,"Patient 375",72,Female,9876500375,patient375@example.com,"375 Test Street, City",Vata-Pitta,"Ayurvedic Diet",discharged,2024-08-08
+P00376,"Patient 376",70,Other,9876500376,patient376@example.com,"376 Test Street, City",Pitta,"Herbal Therapy",discharged,2024-12-26
+P00377,"Patient 377",79,Male,9876500377,patient377@example.com,"377 Test Street, City",Kapha,"Ayurvedic Diet",admitted,2024-10-11
+P00378,"Patient 378",74,Other,9876500378,patient378@example.com,"378 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-03-18
+P00379,"Patient 379",20,Other,9876500379,patient379@example.com,"379 Test Street, City",Kapha,"Massage Therapy",active,2024-12-28
+P00380,"Patient 380",77,Other,9876500380,patient380@example.com,"380 Test Street, City",Vata-Pitta,"Shirodhara",discharged,2024-08-18
+P00381,"Patient 381",38,Other,9876500381,patient381@example.com,"381 Test Street, City",Vata,"Yoga Therapy",active,2024-03-23
+P00382,"Patient 382",51,Other,9876500382,patient382@example.com,"382 Test Street, City",Kapha,"Yoga Therapy",admitted,2024-08-07
+P00383,"Patient 383",38,Other,9876500383,patient383@example.com,"383 Test Street, City",Vata,"Basti",discharged,2024-11-22
+P00384,"Patient 384",58,Male,9876500384,patient384@example.com,"384 Test Street, City",Pitta-Kapha,"Massage Therapy",admitted,2024-04-08
+P00385,"Patient 385",23,Female,9876500385,patient385@example.com,"385 Test Street, City",Pitta-Kapha,"Nasyam",discharged,2024-12-03
+P00386,"Patient 386",42,Female,9876500386,patient386@example.com,"386 Test Street, City",Kapha,"Abhyanga",active,2024-01-07
+P00387,"Patient 387",51,Female,9876500387,patient387@example.com,"387 Test Street, City",Kapha,"Panchakarma",active,2024-02-05
+P00388,"Patient 388",65,Female,9876500388,patient388@example.com,"388 Test Street, City",Kapha,"Massage Therapy",active,2024-05-22
+P00389,"Patient 389",67,Male,9876500389,patient389@example.com,"389 Test Street, City",Kapha,"Yoga Therapy",admitted,2024-01-10
+P00390,"Patient 390",61,Female,9876500390,patient390@example.com,"390 Test Street, City",Pitta-Kapha,"Shirodhara",active,2024-04-12
+P00391,"Patient 391",69,Female,9876500391,patient391@example.com,"391 Test Street, City",Pitta,"Panchakarma",admitted,2024-12-03
+P00392,"Patient 392",32,Male,9876500392,patient392@example.com,"392 Test Street, City",Pitta,"Massage Therapy",admitted,2024-09-02
+P00393,"Patient 393",77,Male,9876500393,patient393@example.com,"393 Test Street, City",Pitta-Kapha,"Basti",admitted,2024-02-04
+P00394,"Patient 394",48,Male,9876500394,patient394@example.com,"394 Test Street, City",Kapha-Vata,"Yoga Therapy",admitted,2024-01-03
+P00395,"Patient 395",66,Male,9876500395,patient395@example.com,"395 Test Street, City",Pitta-Kapha,"Panchakarma",admitted,2024-06-23
+P00396,"Patient 396",79,Female,9876500396,patient396@example.com,"396 Test Street, City",Kapha-Vata,"Meditation",active,2024-04-22
+P00397,"Patient 397",58,Female,9876500397,patient397@example.com,"397 Test Street, City",Kapha,"Panchakarma",active,2024-08-07
+P00398,"Patient 398",44,Other,9876500398,patient398@example.com,"398 Test Street, City",Pitta-Kapha,"Ayurvedic Diet",discharged,2024-08-02
+P00399,"Patient 399",67,Male,9876500399,patient399@example.com,"399 Test Street, City",Vata-Pitta,"Detoxification",active,2024-07-21
+P00400,"Patient 400",78,Female,9876500400,patient400@example.com,"400 Test Street, City",Kapha,"Herbal Therapy",active,2024-02-15
+P00401,"Patient 401",29,Female,9876500401,patient401@example.com,"401 Test Street, City",Kapha,"Basti",admitted,2024-12-17
+P00402,"Patient 402",63,Other,9876500402,patient402@example.com,"402 Test Street, City",Kapha-Vata,"Meditation",admitted,2024-01-12
+P00403,"Patient 403",21,Male,9876500403,patient403@example.com,"403 Test Street, City",Pitta,"Panchakarma",active,2024-09-09
+P00404,"Patient 404",44,Female,9876500404,patient404@example.com,"404 Test Street, City",Pitta-Kapha,"Meditation",admitted,2024-08-22
+P00405,"Patient 405",65,Female,9876500405,patient405@example.com,"405 Test Street, City",Vata-Pitta,"Yoga Therapy",active,2024-09-17
+P00406,"Patient 406",43,Male,9876500406,patient406@example.com,"406 Test Street, City",Kapha-Vata,"Shirodhara",admitted,2024-11-19
+P00407,"Patient 407",62,Female,9876500407,patient407@example.com,"407 Test Street, City",Pitta-Kapha,"Yoga Therapy",discharged,2024-03-13
+P00408,"Patient 408",78,Female,9876500408,patient408@example.com,"408 Test Street, City",Pitta-Kapha,"Herbal Therapy",active,2024-05-23
+P00409,"Patient 409",39,Male,9876500409,patient409@example.com,"409 Test Street, City",Pitta-Kapha,"Panchakarma",discharged,2024-08-06
+P00410,"Patient 410",22,Female,9876500410,patient410@example.com,"410 Test Street, City",Kapha,"Basti",discharged,2024-08-28
+P00411,"Patient 411",67,Female,9876500411,patient411@example.com,"411 Test Street, City",Kapha,"Panchakarma",active,2024-02-24
+P00412,"Patient 412",32,Other,9876500412,patient412@example.com,"412 Test Street, City",Vata,"Panchakarma",discharged,2024-11-21
+P00413,"Patient 413",48,Other,9876500413,patient413@example.com,"413 Test Street, City",Vata-Pitta,"Herbal Therapy",admitted,2024-06-16
+P00414,"Patient 414",55,Male,9876500414,patient414@example.com,"414 Test Street, City",Pitta,"Yoga Therapy",discharged,2024-09-17
+P00415,"Patient 415",59,Female,9876500415,patient415@example.com,"415 Test Street, City",Kapha-Vata,"Herbal Therapy",discharged,2024-07-01
+P00416,"Patient 416",60,Other,9876500416,patient416@example.com,"416 Test Street, City",Kapha-Vata,"Yoga Therapy",active,2024-01-20
+P00417,"Patient 417",79,Other,9876500417,patient417@example.com,"417 Test Street, City",Pitta,"Nasyam",active,2024-11-08
+P00418,"Patient 418",45,Male,9876500418,patient418@example.com,"418 Test Street, City",Pitta-Kapha,"Shirodhara",discharged,2024-12-10
+P00419,"Patient 419",48,Female,9876500419,patient419@example.com,"419 Test Street, City",Pitta,"Meditation",admitted,2024-08-12
+P00420,"Patient 420",30,Female,9876500420,patient420@example.com,"420 Test Street, City",Pitta,"Ayurvedic Diet",admitted,2024-01-02
+P00421,"Patient 421",79,Male,9876500421,patient421@example.com,"421 Test Street, City",Vata,"Meditation",active,2024-02-10
+P00422,"Patient 422",29,Female,9876500422,patient422@example.com,"422 Test Street, City",Kapha,"Shirodhara",admitted,2024-12-07
+P00423,"Patient 423",72,Other,9876500423,patient423@example.com,"423 Test Street, City",Vata-Pitta,"Nasyam",admitted,2024-02-18
+P00424,"Patient 424",38,Male,9876500424,patient424@example.com,"424 Test Street, City",Vata-Pitta,"Meditation",discharged,2024-10-22
+P00425,"Patient 425",75,Male,9876500425,patient425@example.com,"425 Test Street, City",Pitta,"Detoxification",admitted,2024-10-17
+P00426,"Patient 426",38,Female,9876500426,patient426@example.com,"426 Test Street, City",Kapha-Vata,"Panchakarma",admitted,2024-03-23
+P00427,"Patient 427",79,Other,9876500427,patient427@example.com,"427 Test Street, City",Pitta,"Panchakarma",admitted,2024-01-17
+P00428,"Patient 428",48,Other,9876500428,patient428@example.com,"428 Test Street, City",Kapha-Vata,"Meditation",discharged,2024-11-12
+P00429,"Patient 429",23,Other,9876500429,patient429@example.com,"429 Test Street, City",Pitta-Kapha,"Nasyam",discharged,2024-10-07
+P00430,"Patient 430",48,Male,9876500430,patient430@example.com,"430 Test Street, City",Kapha-Vata,"Massage Therapy",discharged,2024-02-20
+P00431,"Patient 431",56,Male,9876500431,patient431@example.com,"431 Test Street, City",Vata,"Ayurvedic Diet",discharged,2024-01-24
+P00432,"Patient 432",42,Female,9876500432,patient432@example.com,"432 Test Street, City",Kapha-Vata,"Shirodhara",admitted,2024-11-09
+P00433,"Patient 433",62,Female,9876500433,patient433@example.com,"433 Test Street, City",Pitta,"Shirodhara",admitted,2024-10-07
+P00434,"Patient 434",61,Female,9876500434,patient434@example.com,"434 Test Street, City",Vata-Pitta,"Detoxification",active,2024-03-16
+P00435,"Patient 435",55,Other,9876500435,patient435@example.com,"435 Test Street, City",Vata-Pitta,"Basti",admitted,2024-03-04
+P00436,"Patient 436",76,Female,9876500436,patient436@example.com,"436 Test Street, City",Vata,"Nasyam",discharged,2024-07-10
+P00437,"Patient 437",51,Male,9876500437,patient437@example.com,"437 Test Street, City",Vata-Pitta,"Panchakarma",active,2024-02-16
+P00438,"Patient 438",72,Other,9876500438,patient438@example.com,"438 Test Street, City",Vata-Pitta,"Detoxification",active,2024-08-15
+P00439,"Patient 439",75,Male,9876500439,patient439@example.com,"439 Test Street, City",Kapha,"Ayurvedic Diet",active,2024-09-24
+P00440,"Patient 440",50,Female,9876500440,patient440@example.com,"440 Test Street, City",Vata,"Basti",discharged,2024-10-11
+P00441,"Patient 441",38,Other,9876500441,patient441@example.com,"441 Test Street, City",Vata-Pitta,"Basti",admitted,2024-06-11
+P00442,"Patient 442",79,Other,9876500442,patient442@example.com,"442 Test Street, City",Kapha,"Virechana",discharged,2024-10-12
+P00443,"Patient 443",24,Male,9876500443,patient443@example.com,"443 Test Street, City",Kapha,"Herbal Therapy",admitted,2024-01-23
+P00444,"Patient 444",27,Male,9876500444,patient444@example.com,"444 Test Street, City",Pitta,"Panchakarma",admitted,2024-04-21
+P00445,"Patient 445",39,Female,9876500445,patient445@example.com,"445 Test Street, City",Vata-Pitta,"Virechana",active,2024-12-08
+P00446,"Patient 446",53,Female,9876500446,patient446@example.com,"446 Test Street, City",Kapha-Vata,"Panchakarma",active,2024-02-02
+P00447,"Patient 447",50,Other,9876500447,patient447@example.com,"447 Test Street, City",Pitta,"Virechana",admitted,2024-11-10
+P00448,"Patient 448",73,Other,9876500448,patient448@example.com,"448 Test Street, City",Pitta-Kapha,"Basti",discharged,2024-10-25
+P00449,"Patient 449",42,Female,9876500449,patient449@example.com,"449 Test Street, City",Vata-Pitta,"Shirodhara",discharged,2024-05-17
+P00450,"Patient 450",27,Male,9876500450,patient450@example.com,"450 Test Street, City",Kapha-Vata,"Virechana",admitted,2024-01-22
+P00451,"Patient 451",58,Male,9876500451,patient451@example.com,"451 Test Street, City",Pitta-Kapha,"Detoxification",active,2024-10-17
+P00452,"Patient 452",40,Other,9876500452,patient452@example.com,"452 Test Street, City",Pitta,"Meditation",active,2024-01-28
+P00453,"Patient 453",48,Female,9876500453,patient453@example.com,"453 Test Street, City",Kapha-Vata,"Yoga Therapy",admitted,2024-03-01
+P00454,"Patient 454",63,Other,9876500454,patient454@example.com,"454 Test Street, City",Kapha,"Ayurvedic Diet",discharged,2024-07-01
+P00455,"Patient 455",50,Female,9876500455,patient455@example.com,"455 Test Street, City",Kapha-Vata,"Virechana",discharged,2024-05-10
+P00456,"Patient 456",61,Male,9876500456,patient456@example.com,"456 Test Street, City",Pitta,"Detoxification",active,2024-03-24
+P00457,"Patient 457",41,Male,9876500457,patient457@example.com,"457 Test Street, City",Vata,"Panchakarma",discharged,2024-03-24
+P00458,"Patient 458",71,Other,9876500458,patient458@example.com,"458 Test Street, City",Vata,"Yoga Therapy",discharged,2024-08-27
+P00459,"Patient 459",45,Female,9876500459,patient459@example.com,"459 Test Street, City",Vata-Pitta,"Basti",discharged,2024-05-16
+P00460,"Patient 460",47,Other,9876500460,patient460@example.com,"460 Test Street, City",Vata,"Herbal Therapy",discharged,2024-10-12
+P00461,"Patient 461",49,Female,9876500461,patient461@example.com,"461 Test Street, City",Pitta,"Herbal Therapy",admitted,2024-10-07
+P00462,"Patient 462",41,Male,9876500462,patient462@example.com,"462 Test Street, City",Pitta-Kapha,"Panchakarma",admitted,2024-11-17
+P00463,"Patient 463",69,Male,9876500463,patient463@example.com,"463 Test Street, City",Kapha-Vata,"Panchakarma",active,2024-09-11
+P00464,"Patient 464",61,Female,9876500464,patient464@example.com,"464 Test Street, City",Vata,"Yoga Therapy",discharged,2024-05-09
+P00465,"Patient 465",24,Male,9876500465,patient465@example.com,"465 Test Street, City",Vata,"Detoxification",admitted,2024-02-25
+P00466,"Patient 466",64,Female,9876500466,patient466@example.com,"466 Test Street, City",Vata-Pitta,"Virechana",admitted,2024-09-08
+P00467,"Patient 467",34,Female,9876500467,patient467@example.com,"467 Test Street, City",Vata,"Massage Therapy",active,2024-01-05
+P00468,"Patient 468",31,Female,9876500468,patient468@example.com,"468 Test Street, City",Vata,"Shirodhara",discharged,2024-01-06
+P00469,"Patient 469",43,Female,9876500469,patient469@example.com,"469 Test Street, City",Pitta,"Meditation",discharged,2024-07-07
+P00470,"Patient 470",39,Male,9876500470,patient470@example.com,"470 Test Street, City",Kapha,"Panchakarma",admitted,2024-05-07
+P00471,"Patient 471",51,Female,9876500471,patient471@example.com,"471 Test Street, City",Vata,"Nasyam",active,2024-05-26
+P00472,"Patient 472",44,Female,9876500472,patient472@example.com,"472 Test Street, City",Vata-Pitta,"Yoga Therapy",admitted,2024-03-03
+P00473,"Patient 473",63,Male,9876500473,patient473@example.com,"473 Test Street, City",Kapha-Vata,"Detoxification",admitted,2024-08-02
+P00474,"Patient 474",31,Male,9876500474,patient474@example.com,"474 Test Street, City",Kapha,"Herbal Therapy",active,2024-06-27
+P00475,"Patient 475",62,Male,9876500475,patient475@example.com,"475 Test Street, City",Pitta-Kapha,"Herbal Therapy",discharged,2024-04-15
+P00476,"Patient 476",67,Female,9876500476,patient476@example.com,"476 Test Street, City",Pitta-Kapha,"Basti",active,2024-08-21
+P00477,"Patient 477",71,Male,9876500477,patient477@example.com,"477 Test Street, City",Vata-Pitta,"Herbal Therapy",active,2024-06-14
+P00478,"Patient 478",57,Other,9876500478,patient478@example.com,"478 Test Street, City",Kapha,"Massage Therapy",discharged,2024-01-16
+P00479,"Patient 479",37,Other,9876500479,patient479@example.com,"479 Test Street, City",Vata,"Yoga Therapy",admitted,2024-12-16
+P00480,"Patient 480",51,Other,9876500480,patient480@example.com,"480 Test Street, City",Vata,"Abhyanga",active,2024-09-06
+P00481,"Patient 481",22,Other,9876500481,patient481@example.com,"481 Test Street, City",Vata-Pitta,"Nasyam",active,2024-09-20
+P00482,"Patient 482",32,Other,9876500482,patient482@example.com,"482 Test Street, City",Kapha,"Detoxification",active,2024-10-13
+P00483,"Patient 483",32,Other,9876500483,patient483@example.com,"483 Test Street, City",Vata,"Meditation",active,2024-02-02
+P00484,"Patient 484",64,Other,9876500484,patient484@example.com,"484 Test Street, City",Pitta,"Massage Therapy",discharged,2024-04-27
+P00485,"Patient 485",20,Female,9876500485,patient485@example.com,"485 Test Street, City",Vata-Pitta,"Virechana",active,2024-05-15
+P00486,"Patient 486",65,Male,9876500486,patient486@example.com,"486 Test Street, City",Kapha-Vata,"Nasyam",discharged,2024-04-27
+P00487,"Patient 487",78,Male,9876500487,patient487@example.com,"487 Test Street, City",Kapha,"Ayurvedic Diet",admitted,2024-12-06
+P00488,"Patient 488",33,Other,9876500488,patient488@example.com,"488 Test Street, City",Kapha-Vata,"Ayurvedic Diet",active,2024-04-03
+P00489,"Patient 489",30,Male,9876500489,patient489@example.com,"489 Test Street, City",Kapha-Vata,"Panchakarma",discharged,2024-04-19
+P00490,"Patient 490",78,Male,9876500490,patient490@example.com,"490 Test Street, City",Kapha-Vata,"Shirodhara",admitted,2024-06-11
+P00491,"Patient 491",36,Other,9876500491,patient491@example.com,"491 Test Street, City",Kapha,"Nasyam",discharged,2024-03-08
+P00492,"Patient 492",31,Male,9876500492,patient492@example.com,"492 Test Street, City",Vata-Pitta,"Virechana",discharged,2024-04-20
+P00493,"Patient 493",68,Other,9876500493,patient493@example.com,"493 Test Street, City",Kapha-Vata,"Panchakarma",admitted,2024-03-09
+P00494,"Patient 494",56,Male,9876500494,patient494@example.com,"494 Test Street, City",Vata-Pitta,"Detoxification",admitted,2024-07-02
+P00495,"Patient 495",74,Other,9876500495,patient495@example.com,"495 Test Street, City",Vata-Pitta,"Nasyam",discharged,2024-11-16
+P00496,"Patient 496",58,Male,9876500496,patient496@example.com,"496 Test Street, City",Pitta-Kapha,"Abhyanga",discharged,2024-12-24
+P00497,"Patient 497",44,Female,9876500497,patient497@example.com,"497 Test Street, City",Vata-Pitta,"Basti",discharged,2024-01-05
+P00498,"Patient 498",54,Other,9876500498,patient498@example.com,"498 Test Street, City",Vata,"Abhyanga",admitted,2024-02-16
+P00499,"Patient 499",79,Male,9876500499,patient499@example.com,"499 Test Street, City",Kapha-Vata,"Ayurvedic Diet",admitted,2024-05-17
+P00500,"Patient 500",22,Female,9876500500,patient500@example.com,"500 Test Street, City",Pitta,"Meditation",admitted,2024-03-19

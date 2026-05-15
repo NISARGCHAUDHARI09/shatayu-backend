@@ -1,0 +1,8 @@
+name = "shatayu_hospital_backend"
+main = "backend/index.js"
+compatibility_date = "2024-10-13"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "shatayu_hospital_db"
+database_id = "2b3a4a38-e49d-4ea5-8e34-1dcdab001621"

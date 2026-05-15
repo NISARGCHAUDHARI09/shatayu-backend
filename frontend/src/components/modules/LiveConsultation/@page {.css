@@ -1,0 +1,10 @@
+@page {
+  size: A4;
+  margin: 1.5cm;
+  @top-left { content: none !important; }
+  @top-center { content: none !important; }
+  @top-right { content: none !important; }
+  @bottom-left { content: none !important; }
+  @bottom-center { content: none !important; }
+  @bottom-right { content: none !important; }
+}
